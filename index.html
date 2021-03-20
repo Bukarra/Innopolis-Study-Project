@@ -12,15 +12,11 @@
     <header>
         <img src="images/background_land.png" alt="Кинотеатр" width="1124" height="668">
         <a href="http://university.innopolis.ru" target="blank" title="Продажа билетов в кино в Иннополисе">
-            <img src="images/Logo Innopolis University.svg" alt="Логотип" width="156" height="39">
+            <img src="images/Logo Innopolis University.svg" alt="Логотип" width="156" height="39"
+                style="background-color: black; padding: 10">
         </a>
         <nav>
-            <p>+7 (800) 355 12-56</p>
-            <p>+7 (800) 355 12-56</p>
-        </nav>
-        <nav>
             <ul>
-                <li>+7 (800) 355 12-56</li>
                 <li>+7 (800) 355 12-56</li>
                 <li>ул.Спортивная д.1</li>
                 <li>Заказать звонок</li>
@@ -39,17 +35,17 @@
     </header>
     <section>
         <b>Добро пожаловать!</b>
-        <p>
+        <div>
             <ul>
                 <li>Lorem</li>
                 <li>ipsum</li>
                 <li>dolor</li>
             </ul>
-            sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            <i>amet,</i> consectetur <s>elit, sed</s> do eiusmod
+            <u>incididunt ut</u> labore et<sub>2</sub> dolore magna<sup>4</sup> aliqua. Ut enim ad minim
             veniam.
-        </p>
-        <p>
+        </div>
+        <div>
             <ol reversed start="2" type="I">
                 <li>Lorem</li>
                 <li>ipsum</li>
@@ -64,7 +60,7 @@
                 <dt>dolor</dt>
                 <dd>Excepteur sint occaecat cupidatat</dd>
             </dl>
-        </p>
+        </div>
         <ul>
             <li>Lorem</li>
             <ul>
@@ -84,7 +80,6 @@
             </ol>
             <li>dolor</li>
         </ol>
-
     </section>
     <div>
         <div>
@@ -165,7 +160,7 @@
                 <h2>Выберите фильм</h2>
             </a>
         </div>
-        <p>
+        <div>
             <table border="1" cellpadding="10" cellspacing="1">
                 <thead>
                     <tr>
@@ -174,15 +169,6 @@
                         <th>Жанр</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <td></td>
-                        <td>16:00</td>
-                        <td><a href="https://www.kinopoisk.ru/film/693730/" target="blank">Люди в чёрном: Интэрнэшнл</a>
-                        </td>
-                        <td>Фантастика, боевик, комедия</td>
-                    </tr>
-                </tfoot>
                 <tbody>
                     <tr>
                         <td rowspan="2"></td>
@@ -202,8 +188,17 @@
                         <td>Мультфильм, фэнтэзи, комедия</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>16:00</td>
+                        <td><a href="https://www.kinopoisk.ru/film/693730/" target="blank">Люди в чёрном: Интэрнэшнл</a>
+                        </td>
+                        <td>Фантастика, боевик, комедия</td>
+                    </tr>
+                </tfoot>
             </table>
-        </p>
+        </div>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -349,7 +344,7 @@
     <div>
         <img src="images/feedbackform_land.png" alt="Обратная связь" width="414" height="527">
         <h3>Обратная связь</h3>
-        <form id="form1" action="/order" method="">
+        <form id="form1" action="/order" method="POST">
             <div>
                 <label>
                     <input type="text" id="input1" name="fullname" value="" required placeholder="Полное имя">
@@ -464,7 +459,7 @@
                     <ul>
                         <li>+7 (800) 355 12-56</li>
                         <li>kino@innopolis.ru</li>
-                        <span>420500, г. Иннополис ул.Университетская, д.1</span>
+                        <li>420500, г. Иннополис ул.Университетская, д.1</li>
                         <li><a href="#" title="Продажа билетов в кино в Иннополисе">Как добраться</a></li>
                         <li><a href="#" title="Продажа билетов в кино в Иннополисе">Все контакты</a></li>
                     </ul>
