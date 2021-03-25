@@ -1,0 +1,36 @@
+.table01{
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table01 th{
+    background: #A3CC40;
+    text-align: center;
+    padding: 10px 20px;
+}
+.table01__link{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #FFF;
+}
+.table01__linkicon{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    padding-left: 7px;
+}
+.table01 tr{
+    vertical-align: top;
+}
+.table01 td{
+    background: #373737;
+    padding: 14px 20px;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.3;
+}
+.table01 tr:nth-child(2n+1) td{
+    background: #6c6c6c;
+}
