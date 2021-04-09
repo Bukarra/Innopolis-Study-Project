@@ -1,40 +1,201 @@
-.table01{
+/** Шрифты */
+@font-face {
+    font-family: 'IBM_Plex_Sans';
+    src: url(../fonts/IBMPlexSans-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBM_Plex_Sans';
+    src: url(../fonts/IBMPlexSans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBM_Plex_Sans';
+    src: url(../fonts/IBMPlexSans-Thin.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+/** Общие стили */
+body {
+    font-family: 'IBM_Plex_Sans',
+        sans-serif;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.link-white {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #FFF;
+    transform: 0.2s;
+    text-decoration: none;
+}
+
+.link-white:hover {
+    color: #A3CC40;
+}
+
+.link-underline {
+    border-bottom: 1px solid;
+    display: inline-block;
+    line-height: 1.0;
+}
+
+/** Сетка макета */
+.block01 {
+    background: url(../images/block01_background.jpg) no-repeat center / cover,
+        teal;
+    width: 1120px;
+    height: 662px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.container .block01__inner {
+    position: absolute;
+    left: 90px;
+    top: 50px;
+}
+
+.block01__col1 {
+    float: left;
+    padding-right: 45px;
+}
+
+.block01__col2 {
+    float: left;
+}
+
+.block01__tel,
+.block01__mail,
+.block01__address,
+.block01__call {
+    float: left;
+    margin-bottom: 6px;
+}
+
+.block01__address {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #FFF;
+    margin-top: 3px;
+}
+
+.block01__call {
+    text-decoration: none;
+    margin-top: 3px;
+    padding-right: 120px;
+}
+
+.block01__row1_padding {
+    padding-right: 55px;
+}
+
+.block01__lang span {
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFF;
+}
+
+.block01_lang svg {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.block01__section1,
+.block01__section2,
+.block01__section3,
+.block01__section4,
+.block01__section5 {
+    float: left;
+}
+
+.block01_upper {
+    text-transform: uppercase;
+}
+
+.block01__row2_padding {
+    padding-right: 74px;
+}
+
+.block01__headline {
+    max-width: 750px;
+    margin: 0 auto;
+    position: absolute;
+    top: 245px;
+}
+
+.block01__main-text {
+    font-weight: 100;
+    font-size: 68px;
+    line-height: 1.3;
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.block01__extra-text {
+    font-weight: normal;
+    font-size: 41px;
+    line-height: 1.3;
+    color: #FFF;
+    text-align: center;
+}
+
+.table01 {
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
     text-align: left;
 }
-.table01 th{
+
+.table01 th {
     background: #A3CC40;
 }
-.table01__col1{
+
+.table01__col1 {
     padding: 10px 40px 10px 20px;
 }
-.table01__col2{
+
+.table01__col2 {
     padding: 10px 20px 10px 40px;
 }
-.table01__col3{
+
+.table01__col3 {
     padding: 10px 60px 10px 20px;
 }
-.table01__link{
-    font-family: IBM Plex Sans;
+
+.table01__link {
     font-weight: 600;
     font-size: 20px;
     line-height: 1.3;
     color: #FFF;
     text-decoration: none;
 }
-.table01__linkicon{
+
+.table01__linkicon {
     display: inline-block;
     vertical-align: top;
     margin-top: 11px;
     padding-left: 3px;
 }
-.table01 tr{
+
+.table01 tr {
     vertical-align: top;
 }
-.table01 td{
-    font-family: IBM Plex Sans;
+
+.table01 td {
     background: #373737;
     padding: 14px 20px;
     color: #FFF;
@@ -42,6 +203,12 @@
     font-size: 14px;
     line-height: 1.3;
 }
-.table01 tr:nth-child(2n+1) td{
+
+.table01 tr:nth-child(2n+1) td {
     background: #6c6c6c;
 }
+
+
+
+/** Компоненты */
+/** Медиа – правила */
