@@ -26,11 +26,23 @@ body {
         sans-serif;
 }
 
+.headline-font {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.29;
+    color: #A3CC40;
+}
+
 .paragraph-font {
     font-weight: normal;
     font-size: 11px;
     line-height: 1.27;
     color: #333333;
+}
+
+.picture-size {
+    width: 245px;
+    height: 169px;
 }
 
 .container {
@@ -51,6 +63,20 @@ body {
     color: #A3CC40;
 }
 
+.link-menu {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #FFF;
+    transform: 0.2s;
+    text-decoration: none;
+}
+
+.link-menu:hover {
+    color: #A3CC40;
+    border-bottom: 1px solid;
+}
+
 .link-underline {
     border-bottom: 1px solid;
     display: inline-block;
@@ -58,15 +84,17 @@ body {
 }
 
 /** Сетка макета */
+
 /** Компоненты */
+/** Блок 1 */
 .block01 {
     background: url('../images/block01_background.jpg') no-repeat center / cover,
         teal;
     max-width: 1124px;
-    height: 662px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .block01::after {
@@ -195,14 +223,15 @@ body {
     text-transform: uppercase;
 }
 
-.block01__row2_padding {
-    padding-right: 74px;
+.block01__row2_margin {
+    margin-right: 74px;
 }
 
 .block01__headline {
     max-width: 750px;
     margin: 0 auto;
     padding-top: 180px;
+    padding-bottom: 250px;
 }
 
 .block01__main-text {
@@ -222,9 +251,15 @@ body {
     text-align: center;
 }
 
+/** Блок 2 */
 .block02 {
     max-width: 1124px;
-    min-height: 300px;
+    height: 900px;
+    margin: 0 auto;
+}
+
+.block02__inner {
+    max-width: 854px;
     margin: 0 auto;
     position: relative;
 }
@@ -236,7 +271,9 @@ body {
     border-radius: 10px;
     padding: 30px 47px;
     max-width: 426px;
-    right: 0;
+    right: 0px;
+    top: -175px;
+    box-sizing: border-box;
 }
 
 .block02__welcome-header {
@@ -248,7 +285,26 @@ body {
 }
 
 .block02__welcome-text1 {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+}
+
+.block02__headline {
+    margin: 32px 0 84px;
+}
+
+.block02__content {
+    max-width: 844px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.block02__benefit {
+    float: left;
+    width: 33.33%;
+}
+
+.block02__benefits {
+    margin: 0 -27px;
 }
 
 .table01 {
