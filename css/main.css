@@ -20,6 +20,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'IBM_Plex_Sans';
+    src: url('../fonts/IBMPlexSans-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
 /** Общие стили */
 body {
     font-family: 'IBM_Plex_Sans',
@@ -38,6 +45,13 @@ body {
     font-size: 11px;
     line-height: 1.27;
     color: #333333;
+}
+
+.headline-font_bold {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #333;
 }
 
 .picture-size {
@@ -254,7 +268,7 @@ body {
 /** Блок 2 */
 .block02 {
     max-width: 1124px;
-    height: 900px;
+    height: 1000px;
     margin: 0 auto;
 }
 
@@ -303,65 +317,111 @@ body {
     width: 33.33%;
 }
 
-.block02__benefits {
+.block02__large-text {
+    margin: 35px 0 37px;
+}
+
+.block02__small-text {
+    margin-bottom: 60px;
+}
+
+.block02 .block02__benefits {
     margin: 0 -27px;
 }
 
-.table01 {
+/** Блок 3 */
+
+.block03 {
+    max-width: 1124px;
+    height: 490px;
+    margin: 0 auto;
+}
+
+.block03__inner {
+    max-width: 854px;
+    margin: 0 auto;
+}
+
+.block03__table-wrap {
+    max-width: 844px;
+    margin: 0 auto;
+}
+
+.block03__headline {
+    margin: -5px 0 84px;
+}
+
+.block03__table {
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
     text-align: left;
 }
 
-.table01 th {
+.block03__table th {
     background: #A3CC40;
+    padding: 10px 20px;
 }
 
-.table01__col1 {
-    padding: 10px 40px 10px 20px;
-}
-
-.table01__col2 {
-    padding: 10px 20px 10px 40px;
-}
-
-.table01__col3 {
-    padding: 10px 60px 10px 20px;
-}
-
-.table01__link {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    color: #FFF;
+.block03__table_white {
     text-decoration: none;
+    color: #FFF;
 }
 
-.table01__linkicon {
+.block03__link-icon {
     display: inline-block;
     vertical-align: top;
-    margin-top: 11px;
-    padding-left: 3px;
+    margin-top: 12px;
+    margin-left: 3px;
 }
 
-.table01 tr {
-    vertical-align: top;
-}
-
-.table01 td {
+.block03__table td {
     background: #373737;
     padding: 14px 20px;
     color: #FFF;
-    font-weight: 400;
+    font-weight: normal;
     font-size: 14px;
     line-height: 1.3;
 }
 
-.table01 tr:nth-child(2n+1) td {
-    background: #6c6c6c;
+.block03__table tr:nth-child(2n+1) td {
+    background: #4C4D4F;
 }
 
+.block03__check {
+    fill: #FFF;
+}
+
+.block03__check:hover {
+    fill: #A3CC40;
+}
+
+.block03__text {
+    margin: 31px auto;
+    text-align: center;
+    width: 539px;
+}
+
+/** Блок 4 */
+.block04 {
+    background: url('../images/block04_background.jpg') no-repeat center / cover,
+        teal;
+    max-width: 1124px;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.block04::after {
+    content: '';
+    display: block;
+    border-bottom: 167px solid transparent;
+    border-left: 100vw solid #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 /** Медиа – правила */
