@@ -407,21 +407,78 @@ body {
     background: url('../images/block04_background.jpg') no-repeat center / cover,
         teal;
     max-width: 1124px;
-    height: 700px;
+    height: 630px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    padding-top: 10px;
 }
 
-.block04::after {
+.block04::before {
     content: '';
     display: block;
-    border-bottom: 167px solid transparent;
+    border-bottom: 165px solid transparent;
     border-left: 100vw solid #FFF;
     position: absolute;
     top: 0;
     left: 0;
 }
 
+.block04::after {
+    content: '';
+    display: block;
+    border-top: 140px solid transparent;
+    border-right: 100vw solid #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.block04__gift {
+    height: 276px;
+    width: 276px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 139px;
+    bottom: 360px;
+}
+
+.block04__gift-wrap {
+    width: 300px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.block04__text {
+    width: 560px;
+    position: absolute;
+    text-align: right;
+    right: 136px;
+    top: 165px;
+}
+
+.block04__headline {
+    margin-bottom: 39px;
+}
+
+.block04__headline,
+.block04__paragraph {
+    color: #FFF;
+}
+
+.block04__paragraph {
+    margin-bottom: 16px;
+}
+
+.block04__button {
+    margin: 30px 0;
+    width: 190px;
+}
+
+.block04__button1 {
+    background: #A3CC40;
+    border-radius: 6px;
+}
 
 /** Медиа – правила */
