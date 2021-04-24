@@ -579,97 +579,59 @@
             </div>
         </div>
     </div>
-    <div>
-        <img src="images/feedbackform_land.jpg" alt="Обратная связь" width="414" height="527">
-        <h3>Обратная связь</h3>
-        <form id="form1" action="/order" method="POST">
-            <div>
-                <label>
-                    <input type="text" id="input1" name="fullname" value="" required placeholder="Полное имя">
-                </label>
+    <div class="block08">
+        <div class="block08__inner">
+            <div class="block08__form">
+                <h3 class="block08__headline">
+                    Обратная связь
+                </h3>
+                <form id="form1" action="/order" method="POST">
+                    <div class="block08__input">
+                        <label for="input1" class="block08__label1">Полное имя</label>
+                        <input type="text" class="block08__name" id="input1" name="fullname" value="" required>
+                    </div>
+                    <div class="block08__input">
+                        <div class="block08__name">
+                            <span>Номер места</span>
+                            <svg class="block08__icon" width="14" height="8">
+                                <use xlink:href="#select_triangle"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="block08__input">
+                        <label for="input2" class="block08__label1">Напишите свой отзыв</label>
+                        <textarea id="input2" class="block08__comment" name="comment" cols="30" rows="10"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <label class="block08__checkbox">
+                            <input type="checkbox" name="agree">
+                            <span class="block08__tick"></span>
+                            <span class="block08__text">
+                                Я согласен на обработку своих персональных данных
+                            </span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <button class="block08__button" type="submit" name="submit">
+                                <span class="block08__submit">
+                                    Отправить
+                                </span>
+                            </button>
+                        </label>
+                    </div>
+                </form>
             </div>
-            <br>
-            <div>
-                <label>
-                    <input type="email" id="input2" name="email" value="" required placeholder="Email">
-                </label>
+            <div class="block08__pic">
             </div>
-            <br>
-            <div>
-                <label>Выбор места
-                    <select name="place" required>
-                        <option value="">Не выбрано</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                </label>
-            </div>
-            <br>
-            <div>
-                <label>
-                    <textarea name="writeyourcomment" cols="30" rows="10" required
-                        placeholder="Напишите свой отзыв"></textarea>
-                </label>
-            </div>
-            <br>
-            <div>
-                <label>
-                    <input type="checkbox" name="chb1" required>Я согласен на обработку
-                    своих
-                    персональных данных
-                </label>
-            </div>
-            <br>
-            <div>
-                <label>
-                    <input type="file" name="file1">
-                </label>
-            </div>
-            <br>
-            <div>
-                <label>
-                    <button type="submit" name="submit">
-                        Заказать
-                    </button>
-                </label>
-            </div>
-            <br>
-            <div>
-                <label>
-                    <input type="button" id="input3" name="submit2" value="Заказать">
-                </label>
-            </div>
-        </form>
-        <br>
-        <div>
-            <label>
-                <button type="submit" form="form1" name="submit3">
-                    Заказать
-                </button>
-            </label>
-        </div>
-        <br>
-        <div>
-            <label>
-                <input type="button" form="form1" id="input4" name="submit4" value="Заказать">
-            </label>
         </div>
     </div>
-    <div>
-        <img src="images/map_land.jpg" alt="Местоположение" width="973" height="421">
+    <div class="block09">
+        <div class="block09__inner">
+        </div>
     </div>
-    <footer>
-        <a href="http://university.innopolis.ru" target="blank" title="Продажа билетов в кино в Иннополисе">
-            <img src="images/Logo Innopolis University.svg" alt="Логотип" width="161" height="41">
-        </a>
+    <footer class="block10">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -682,7 +644,7 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="#whyus" title="Продажа билетов в кино в Иннополисе">ПОЧЕМУ
+                        <li><a href=" #whyus" title="Продажа билетов в кино в Иннополисе">ПОЧЕМУ
                                 МЫ?</a></li>
                         <li><a href="#selectfilm" title="Продажа билетов в кино в Иннополисе">ВЫБЕРИТЕ
                                 ФИЛЬМ</a>
@@ -797,6 +759,9 @@
         </symbol>
         <symbol id="triangle_down" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 4.5L8 0H0L4 4.5Z" fill="white" />
+        </symbol>
+        <symbol id="select_triangle" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7L13 1" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </symbol>
     </svg>
 </body>
