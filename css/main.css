@@ -920,9 +920,103 @@ input:checked+.block08__tick {
     background: #A3CC40;
 }
 
+.block10__inner {
+    padding-top: 85px;
+    padding-left: 90px;
+    height: 230px;
+    width: 900px;
+    display: flex;
+}
 
+.block10__col1 {
+    flex: 0.5;
+}
 
+.block10__col2 {
+    flex: 0.23;
+}
 
+.block10__col3 {
+    flex: 0.29;
+}
+
+.block10__paragraph {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.28;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+
+.block10__paragraph-wrap {
+    width: 270px;
+}
+
+.block10__media {
+    width: 31px;
+    height: 31px;
+    background: #BEE956;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+}
+
+.block10__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.block10__menu {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.block10___item {
+    margin-bottom: 12px;
+}
+
+.block10__headline {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.block10__menu:hover {
+    border-bottom: 1px solid;
+}
+
+.block10__contact {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #fff;
+    text-decoration: none;
+}
+
+.block10__copyright {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #fff;
+}
+
+.block10__text {
+    margin-left: 90px;
+    padding-bottom: 30px;
+
+}
 
 
 /** Медиа – правила */
