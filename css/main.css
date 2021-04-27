@@ -321,24 +321,23 @@ body {
 .block02__content {
     max-width: 844px;
     margin: 0 auto;
+}
+
+.block02__benefits {
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
+    justify-content: space-between;
 }
 
 .block02__benefit {
-    float: left;
-    width: 33.33%;
-}
-
-.block02__large-text {
-    margin: 35px 0 37px;
-}
-
-.block02__small-text {
-    margin-bottom: 60px;
-}
-
-.block02 .block02__benefits {
-    margin: 0 -27px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 245px;
+    height: 320px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /** Блок 3 */
@@ -515,23 +514,28 @@ body {
 }
 
 .block05__inner {
-    max-width: 850px;
+    max-width: 860px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .block05__headline {
-    margin: 55px 0 27px;
+    margin: 55px 5px 27px;
 }
 
 .block05__paragraph {
     margin-bottom: 64px;
+    padding-left: 5px;
     width: 550px;
 }
 
+.block05__table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .block05__movie {
-    float: left;
-    width: 33.33%;
     position: relative;
     cursor: pointer;
 }
@@ -565,6 +569,7 @@ body {
     transform: translateY(100%);
     transform: 0.2s;
     transition-delay: 0.4s;
+    box-sizing: border-box;
 }
 
 .block05__movie:hover .block05__description {
