@@ -530,9 +530,11 @@ body {
 }
 
 .block05__table {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 284px);
+    grid-template-rows: repeat(3, 1fr);
     justify-content: center;
+    overflow: hidden;
 }
 
 .block05__movie {
