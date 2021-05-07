@@ -42,6 +42,7 @@ html {
 body {
     font-family: 'IBM_Plex_Sans',
         sans-serif;
+    min-width: 320px;
 }
 
 .headline-font {
@@ -117,7 +118,7 @@ body {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: calc(100vh + 8.4rem);
 }
 
 .block01::after {
