@@ -109,6 +109,10 @@ body {
     line-height: 1.0;
 }
 
+.button__font-family {
+    font-family: 'IBM_Plex_Sans';
+}
+
 /** Компоненты */
 /** Блок 1 */
 .block01 {
@@ -311,6 +315,10 @@ body {
     line-height: 1.3;
     color: #FFF;
     text-align: center;
+}
+
+.block01__btn {
+    display: none;
 }
 
 /** Блок 2 */
@@ -654,7 +662,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
 
 .block06__card {
     position: relative;
@@ -1054,6 +1061,3 @@ input:checked+.block08__tick {
     margin-left: 4.4rem;
     padding-bottom: 1.2rem;
 }
-
-
-/** Медиа – правила */

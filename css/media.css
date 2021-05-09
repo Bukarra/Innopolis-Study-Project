@@ -1,0 +1,45 @@
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 3.2vw;
+    }
+
+    .block01__main-text {
+        font-size: 2rem;
+    }
+
+    .block01__extra-text {
+        font-size: 1.4rem;
+    }
+
+    .block01__btn {
+        display: block;
+    }
+
+    .block01__menu-wrap {
+        position: fixed;
+        padding-left: 2rem;
+        background: #fff;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .link-white,
+    .block01__address {
+        color: #9B9B9B;
+        font-size: .8rem;
+    }
+
+    .link-menu {
+        color: #4C4D4F;
+    }
+
+    .block01__row1 {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .block01__lang {
+        color: #A3CC40;
+        order: -1;
+    }
