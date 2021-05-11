@@ -3,6 +3,18 @@
         font-size: 3.2vw;
     }
 
+    .paragraph-font {
+        font-size: .4rem;
+    }
+
+    .headline-font {
+        font-size: 1.4rem;
+    }
+
+    .headline-font_bold {
+        font-size: 1rem;
+    }
+
     .block01__main-text {
         font-size: 2rem;
     }
@@ -11,17 +23,30 @@
         font-size: 1.4rem;
     }
 
+    .block01__col1 {
+        margin-left: 2.2rem;
+    }
+
     .block01__btn {
         display: block;
+        margin-left: 25.8rem;
+        margin-top: .6rem;
     }
 
     .block01__menu-wrap {
+        transform: translateX(100%);
         position: fixed;
-        padding-left: 2rem;
         background: #fff;
         top: 0;
         right: 0;
         bottom: 0;
+        z-index: 1000;
+        transition: .2s;
+    }
+
+    .block01__btn:hover+.block01__menu-wrap,
+    .block01__menu-wrap_opened {
+        transform: translateX(0);
     }
 
     .link-white,
@@ -30,16 +55,195 @@
         font-size: .8rem;
     }
 
-    .link-menu {
-        color: #4C4D4F;
+    .block01__address {
+        margin-bottom: 2rem;
     }
 
-    .block01__row1 {
-        display: inline-flex;
+    .link-menu {
+        color: #4C4D4F;
+        font-size: .8rem;
+    }
+
+    .block01__col2 {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    .block01__row1,
+    .block01__row2 {
+        display: flex;
         flex-direction: column;
     }
 
-    .block01__lang {
+    .block01__row2 {
+        margin-top: 4.6rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .block01__row2 p {
+        padding-bottom: 1.4rem;
+    }
+
+    .block01__button {
+        width: 8rem;
+        height: 1.2rem;
+        box-shadow: 0px 0px 5px #A3CC40;
+        border: #A3CC40;
         color: #A3CC40;
-        order: -1;
+    }
+
+    .block01__button svg {
+        fill: #A3CC40;
+        padding-right: 0.4rem;
+    }
+
+    .block01__lang {
+        position: absolute;
+        top: 2rem;
+    }
+
+    .block01__dropdown-trigger span {
+        color: #A3CC40;
+    }
+
+    .block01__dropdown-trigger svg {
+        fill: #A3CC40;
+    }
+
+    .block02__welcome {
+        max-width: 15.8rem;
+        padding: 1rem;
+        margin-right: 7.4rem;
+    }
+
+    .block02__welcome-header {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .block02__headline {
+        margin: 1.6rem 2.2rem 3rem;
+        padding-top: .5rem;
+    }
+
+    .block02__content {
+        max-width: 27rem;
+    }
+
+    .block02__benefits {
+        flex-direction: row-reverse;
+    }
+
+    .block02__benefit {
+        height: 13rem;
+    }
+
+    .block03__headline {
+        margin: 3rem 2.2rem 3rem;
+    }
+
+    .block03__table_scroll {
+        overflow: auto;
+    }
+
+    .block04 {
+        margin-top: 2rem;
+    }
+
+    .block04__gift {
+        width: 10rem;
+        height: 10rem;
+        left: 3rem;
+        bottom: 20.4rem;
+    }
+
+    .block04__text {
+        margin-left: 1rem;
+        margin-top: 7rem;
+    }
+
+    .block05__headline {
+        margin: 2.4rem 2.2rem 1.6rem;
+    }
+
+    .block05__paragraph {
+        padding-left: 2.2rem;
+    }
+
+    .block05__table {
+        grid-template-columns: repeat(1, 14.2rem);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .block06 {
+        margin-top: 85rem;
+    }
+
+    .block06__headline {
+        margin: 2.6rem 2.2rem 1.4rem;
+    }
+
+    .block06__paragraph {
+        margin-left: 2.2rem;
+    }
+
+    .block06__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block06__card {
+        margin-bottom: 1rem;
+    }
+
+    .block07 {
+        margin-top: 35rem;
+    }
+
+    .block07__headline {
+        margin: 8rem 2.2rem 1rem;
+    }
+
+    .block07__paragraph {
+        margin-left: 2.2rem;
+    }
+
+    .block08__inner {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .block08__pic {
+        width: 10rem;
+    }
+
+    .block08__form {
+        margin-right: .8rem;
+    }
+
+    .block10__inner {
+        padding-top: 4rem;
+        padding-left: 2rem;
+        width: 28rem;
+    }
+
+    .block10__col1 {
+        flex: 0.6;
+    }
+
+    .block10__col2 {
+        flex: 0.25;
+    }
+
+    .block10__col3 {
+        flex: 0.3;
+    }
+
+    .block10__media {
+        margin-right: 1rem;
+    }
+
+    .block10__text {
+        margin-left: 2.2rem;
     }
