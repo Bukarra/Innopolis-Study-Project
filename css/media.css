@@ -68,6 +68,7 @@
         display: flex;
         flex-direction: column-reverse;
         position: relative;
+        margin-left: 2rem;
     }
 
     .block01__row1,
@@ -139,12 +140,21 @@
         height: 13rem;
     }
 
+    .block03 {
+        height: 19.4rem;
+    }
+
     .block03__headline {
         margin: 3rem 2.2rem 3rem;
     }
 
-    .block03__table_scroll {
-        overflow: auto;
+    .block03__table-wrap {
+        overflow-x: auto;
+        margin: 0 2.2rem;
+    }
+
+    .block03__table {
+        min-width: 1000px;
     }
 
     .block04 {
@@ -209,6 +219,14 @@
         margin-left: 2.2rem;
     }
 
+    .owl-stage-outer .owl-item {
+        margin: 0 1rem;
+    }
+
+    .owl-theme .owl-nav span {
+        visibility: hidden;
+    }
+
     .block08__inner {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -220,6 +238,15 @@
 
     .block08__form {
         margin-right: .8rem;
+    }
+
+    .block09 {
+        height: 19rem;
+    }
+
+    .block09__inner {
+        height: 15.4rem;
+        width: 29.6rem;
     }
 
     .block10__inner {
@@ -247,3 +274,4 @@
     .block10__text {
         margin-left: 2.2rem;
     }
+}
