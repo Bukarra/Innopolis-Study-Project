@@ -444,10 +444,18 @@ body {
 }
 
 .block03__check {
+    cursor: pointer;
+}
+
+.block03__check input {
+    display: none;
+}
+
+.block03__check svg {
     fill: #FFF;
 }
 
-.block03__check:hover {
+input:checked+svg {
     fill: #A3CC40;
 }
 
