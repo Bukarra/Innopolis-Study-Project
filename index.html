@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/modal.css">
 
     <link rel="stylesheet" href="libs/owl/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/owl/owl.theme.default.css">
@@ -18,6 +19,7 @@
     <script defer src="/target/film.js"></script>
     <script defer src="/target/main.js"></script>
     <script defer src="/target/films-table.js"></script>
+    <script defer src="/js/prize.js"></script>
 
     <title>Продажа билетов в кино в Иннополисе</title>
 </head>
@@ -361,7 +363,8 @@
             </p>
             <div class="block04__button">
                 <label>
-                    <button class="block04__button1 button__font-family" type="submit" value="Получить подарок">
+                    <button class="block04__button1 button__font-family" id="btn-prize-open" type="submit"
+                        value="Получить подарок">
                         Получить подарок
                     </button>
                 </label>
@@ -946,6 +949,57 @@
             <rect x="0.0400391" y="9" width="46" height="3" fill="white" />
         </symbol>
     </svg>
+
+    <div class="popup hidden" id="prize-popup">
+        <div class="form-wrapper">
+            <button class="close" id="prize-popup__close">
+                <svg width="1.75rem" height="1.75rem" viewBox="0 0 35 35" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="#A3CC40" />
+                    <path
+                        d="M25.5363 11.8271L23.9176 10.2084L17.5 16.626L11.0824 10.2084L9.46362 11.8271L15.8812 18.2447L9.46362 24.6623L11.0824 26.2811L17.5 19.8635L23.9176 26.2811L25.5363 24.6623L19.1187 18.2447L25.5363 11.8271Z"
+                        fill="white" />
+                </svg>
+            </button>
+            <form action="">
+                <div class="modal__input modal__input1">
+                    <label for="input1" class="modal__label modal__label1">Введите имя</label>
+                    <input type="text" class="modal__name" id="input1" name="fullname" value="" required>
+                </div>
+                <div class="modal__input">
+                    <label for="input1" class="modal__label">Введите email</label>
+                    <input type="text" class="modal__name" id="input2" name="fullname" value="" required>
+                </div>
+                <div class="modal__input modal__input3">
+                    <div class="modal__name">
+                        <span>Выберите подарок</span>
+                        <svg class="modal__icon" width=".6rem" height=".4rem">
+                            <use xlink:href="#select_triangle"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <label class="modal__checkbox">
+                        <input type="checkbox" name="agree">
+                        <span class="modal__tick"></span>
+                        <span class="modal__text">
+                            Я согласен на обработку своих персональных данных
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <button class="modal__button button__font-family" type="submit" name="submit">
+                            <span class="modal__submit">
+                                Отправить
+                            </span>
+                        </button>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
