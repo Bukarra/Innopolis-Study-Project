@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/media.css">
@@ -21,7 +22,7 @@
     <script defer src="/target/films-table.js"></script>
     <script defer src="/js/prize.js"></script>
 
-    <title>Продажа билетов в кино в Иннополисе</title>
+    <title>Учебный проект</title>
 </head>
 
 <body>
@@ -964,19 +965,20 @@
             <form action="">
                 <div class="modal__input modal__input1">
                     <label for="input1" class="modal__label modal__label1">Введите имя</label>
-                    <input type="text" class="modal__name" id="input1" name="fullname" value="" required>
+                    <input type="text" class="modal__name" id="input1" name="name" value="" required>
+                    <span class="modal__error">Error message</span>
                 </div>
                 <div class="modal__input">
-                    <label for="input1" class="modal__label">Введите email</label>
-                    <input type="text" class="modal__name" id="input2" name="fullname" value="" required>
+                    <label for="input2" class="modal__label">Введите email</label>
+                    <input type="text" class="modal__name" id="input2" name="email" value="" required>
+                    <span class="modal__error">Error message</span>
                 </div>
-                <div class="modal__input modal__input3">
-                    <div class="modal__name">
-                        <span>Выберите подарок</span>
-                        <svg class="modal__icon" width=".6rem" height=".4rem">
-                            <use xlink:href="#select_triangle"></use>
-                        </svg>
-                    </div>
+                <div class="modal__input3">
+                    <select class="modal__select" name="" id="">
+                        <option value="none">Выберите подарок</option>
+                        <option value="ticket4Free">Бесплатный 3-ий билет</option>
+                        <option value="freePop">Удвоим попкорн</option>
+                    </select>
                 </div>
                 <div>
                     <label class="modal__checkbox">
