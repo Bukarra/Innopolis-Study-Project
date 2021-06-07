@@ -41,11 +41,6 @@
     padding-top: 5rem;
 }
 
-.modal__input3 {
-    padding-bottom: 1.5rem;
-    color: #A1A1A1;
-}
-
 .modal__name {
     font-size: .8rem;
     padding: .4rem .8rem;
@@ -77,13 +72,37 @@
     color: #A1A1A1;
 }
 
+.modal__input_filled .modal__label {
+    top: 1.4rem;
+    left: 2.14rem;
+    color: #333333;
+    transform: .2s;
+    background: #FFF;
+    padding: 0 .3rem;
+}
+
+.modal__input_filled .modal__name {
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+    background: #FFF;
+}
+
+.modal__input_error .modal__name {
+    box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
+    background: #FFF;
+}
+
 .modal__label1 {
     top: 5.4rem;
+    transform: .2s;
+}
+
+.modal__input_filled .modal__label1 {
+    top: 4.4rem;
+    color: #333333;
 }
 
 .modal__select {
-    margin-top: 2rem;
-    margin-left: 1.7rem;
+    margin: 2rem 0 1.5rem 1.7rem;
     border-radius: .2rem;
     min-height: 1.8rem;
     font-weight: normal;
@@ -92,6 +111,7 @@
     color: #A1A1A1;
     background: #DEDEDE;
     border: 0;
+    width: 21.6rem;
 }
 
 .modal__checkbox {
