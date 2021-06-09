@@ -114,6 +114,11 @@
     width: 21.6rem;
 }
 
+.modal__select_selected {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
 .modal__checkbox {
     cursor: pointer;
     padding-left: 1.7rem;
