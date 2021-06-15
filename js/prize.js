@@ -18,10 +18,8 @@ function initializeField(field) {
     const input = field.getElementsByTagName('input')[0];
     const fieldError = field.querySelector('.modal__error');
 
-    input.value = '';
-    field.classList.remove(ERROR_CLASS_NAME);
-    clearError();
-
+    reset();
+    
     function clearError() {
         field.classList.remove(FOCUSED_CLASS_NAME);
         fieldError.innerText = '';
@@ -41,6 +39,12 @@ function initializeField(field) {
         clearError();
     })
 
+    function reset() {
+        input.value = '';
+        field.classList.remove(ERROR_CLASS_NAME);
+        clearError();
+    }
+
     return {
         addError(errorText) {
             field.classList.add(ERROR_CLASS_NAME);
@@ -51,7 +55,8 @@ function initializeField(field) {
         },
         focus() {
             input.focus()
-        }
+        },
+        reset: reset
     }
 }
 
@@ -98,7 +103,13 @@ function handleSubmit(event) {
     const url = new URL('http://inno-ijl.ru/multystub/stc-21-03/feedback');
     url.search = new URLSearchParams(data).toString();
 
-    fetch(url.toString());
+    fetch(url.toString())
+    .then(data => data.json())
+    .then((data) => {
+        popupToggle();
+        nameFieldUtils.reset();
+        emailFieldUtils.reset();
+    });
 
 }
 

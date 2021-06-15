@@ -19,9 +19,7 @@ var SELECT_SELECTED = 'modal__select_selected';
 function initializeField(field) {
   var input = field.getElementsByTagName('input')[0];
   var fieldError = field.querySelector('.modal__error');
-  input.value = '';
-  field.classList.remove(ERROR_CLASS_NAME);
-  clearError();
+  reset();
 
   function clearError() {
     field.classList.remove(FOCUSED_CLASS_NAME);
@@ -39,6 +37,13 @@ function initializeField(field) {
   input.addEventListener('input', function () {
     clearError();
   });
+
+  function reset() {
+    input.value = '';
+    field.classList.remove(ERROR_CLASS_NAME);
+    clearError();
+  }
+
   return {
     addError: function addError(errorText) {
       field.classList.add(ERROR_CLASS_NAME);
@@ -49,7 +54,8 @@ function initializeField(field) {
     },
     focus: function focus() {
       input.focus();
-    }
+    },
+    reset: reset
   };
 }
 
@@ -91,7 +97,13 @@ function handleSubmit(event) {
   };
   var url = new URL('http://inno-ijl.ru/multystub/stc-21-03/feedback');
   url.search = new URLSearchParams(data).toString();
-  fetch(url.toString());
+  fetch(url.toString()).then(function (data) {
+    return data.json();
+  }).then(function (data) {
+    popupToggle();
+    nameFieldUtils.reset();
+    emailFieldUtils.reset();
+  });
 }
 
 form.addEventListener('submit', handleSubmit);

@@ -20,7 +20,8 @@
     <script defer src="/target/film.js"></script>
     <script defer src="/target/main.js"></script>
     <script defer src="/target/films-table.js"></script>
-    <script defer src="/js/prize.js"></script>
+    <script defer src="/target/prize.js"></script>
+    <script defer src="/target/blocks-films.js"></script>
 
     <title>Учебный проект</title>
 </head>
@@ -387,7 +388,7 @@
                 mattis molestie a iaculis at. Vel quam elementum pulvinar etiam non
                 quam.
             </p>
-            <div class="block05__table">
+            <div class="block05__table" id="block05-films-wrapper">
                 <div class="block05__movie">
                     <img class="block05__pic" src="images/film1_land.jpg" alt="Фильм">
                     <div class="block05__shadow"></div>
@@ -965,12 +966,12 @@
             <form id="prize-form" action="">
                 <div class="modal__input modal__input1 modal__input_filled modal__input_error">
                     <label for="input1" class="modal__label modal__label1">Введите имя</label>
-                    <input type="text" class="modal__name" id="input1" name="name" value="" required>
+                    <input type="text" class="modal__name" id="input1" name="name" value="">
                     <span class="modal__error">Error message</span>
                 </div>
                 <div class="modal__input modal__input_filled modal__input_error">
                     <label for="input2" class="modal__label">Введите email</label>
-                    <input type="text" class="modal__name" id="input2" name="email" value="" required>
+                    <input type="text" class="modal__name" id="input2" name="email" value="">
                     <span class="modal__error">Error message</span>
                 </div>
                 <div class="modal__input3">

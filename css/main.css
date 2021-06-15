@@ -586,6 +586,7 @@ input:checked+svg {
     grid-template-rows: repeat(3, 1fr);
     justify-content: center;
     overflow: hidden;
+    height: 42.6rem;
 }
 
 .block05__movie {
