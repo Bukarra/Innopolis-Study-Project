@@ -21,7 +21,7 @@ fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FIL
   data.films.forEach(function (film) {
     var id = "block-films-desc-".concat(film.filmId);
     blockFilmsWrapper.innerHTML += "\n            <div class=\"block05__movie\">\n                <img class=\"block05__pic\" src=\"".concat(film.posterUrlPreview, "\" alt=\"\u0424\u0438\u043B\u044C\u043C\">\n                <div class=\"block05__shadow\"></div>\n                <div class=\"block05__description\">\n                    <p class=\"block05__text1\">\n                        ").concat(film.nameRu, "\n                    </p>\n                    <p id=\"").concat(id, "\" class=\"block05__text2 paragraph-font\">\n                        ...loading\n                    </p>\n                </div>\n            </div>\n        ");
-    fetch('https://kinopoiskapiunofficial.tech/api/v2.1/films/${film.filmId}', {
+    fetch("https://kinopoiskapiunofficial.tech/api/v2.1/films/".concat(film.filmId), {
       headers: _objectSpread({}, apiHeaders),
       cors: 'no-cors'
     }).then(function (data) {

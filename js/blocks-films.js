@@ -31,7 +31,7 @@ fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FIL
             </div>
         `
 
-        fetch('https://kinopoiskapiunofficial.tech/api/v2.1/films/${film.filmId}', {
+        fetch(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${film.filmId}`, {
             headers: {
                 ...apiHeaders
             },
