@@ -36,6 +36,8 @@ const fetchBlockFilms = async() => {
     })
 }
 
+fetchBlockFilms();
+
 /*fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
     headers: {
         ...apiHeaders
