@@ -112,7 +112,9 @@
     background: #DEDEDE;
     border: 0;
     width: 21.6rem;
+    padding-left: 1rem;
 }
+
 
 .modal__select_selected {
     background-color: #fff;

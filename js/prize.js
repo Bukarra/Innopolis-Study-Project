@@ -89,6 +89,11 @@ function handleSubmit(event) {
         return;
     }
 
+    if(!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
+        emailFieldUtils.addError('Невалидный email');
+        return;
+    }
+
     if(!selectPrize.value === 'none') {
         selectPrize.classList.add(ERROR_CLASS_NAME);
         return;

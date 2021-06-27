@@ -1,12 +1,42 @@
 const blockFilmsWrapper = document.getElementById('block05-films-wrapper');
 blockFilmsWrapper.innerHTML = '';
 
-const apiHeaders = {
-    'accept': 'application/json',
-    'X-API-KEY': '5ba46513-d50f-4e8e-860e-e354b5ebbaa6',
+const kinopoiskapiunofficialRequest = (url) => {
+    return fetch(url, {
+        headers: {
+            'accept': 'application/json',
+            'X-API-KEY': '5ba46513-d50f-4e8e-860e-e354b5ebbaa6',
+        },
+        cors: 'no-cors'
+    });
 }
 
-fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
+const topfilmsRequest = () => {
+    return kinopoiskapiunofficialRequest('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1')
+}
+const filmDetailsRequest = (id) => {
+    return kinopoiskapiunofficialRequest(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${id}`)
+}
+
+const fetchBlockFilms = async() => {
+    const result = await topfilmsRequest();
+    const data = await result.json();
+
+    data.films.forEach(async (film) => {
+        const id = `block-films-desc-${film.filmId}`;
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('block05__movie');
+        const img = document.createElement('img');
+        img.classList.add('block05__pic');
+        img.src = film.posterUrlPreview;
+        img.alt = 'Изображение постера';
+        
+        wrapper.append(img);
+        blockFilmsWrapper.append(wrapper);
+    })
+}
+
+/*fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
     headers: {
         ...apiHeaders
     },
@@ -50,4 +80,4 @@ fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FIL
         })
     })
 })
-
+*/
