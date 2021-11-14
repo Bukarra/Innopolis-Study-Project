@@ -1,8 +1,10 @@
 "use strict";
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var blockFilmsWrapper = document.getElementById('block05-films-wrapper');
 blockFilmsWrapper.innerHTML = '';
@@ -24,110 +26,51 @@ var topfilmsRequest = function topfilmsRequest() {
 var filmDetailsRequest = function filmDetailsRequest(id) {
   return kinopoiskapiunofficialRequest("https://kinopoiskapiunofficial.tech/api/v2.1/films/".concat(id));
 };
+/*const fetchBlockFilms = async() => {
+    const result = await topfilmsRequest();
+    const data = await result.json();
 
-var fetchBlockFilms = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-    var result, data;
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            _context2.next = 2;
-            return topfilmsRequest();
-
-          case 2:
-            result = _context2.sent;
-            _context2.next = 5;
-            return result.json();
-
-          case 5:
-            data = _context2.sent;
-            data.films.forEach( /*#__PURE__*/function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(film) {
-                var id, wrapper, img;
-                return regeneratorRuntime.wrap(function _callee$(_context) {
-                  while (1) {
-                    switch (_context.prev = _context.next) {
-                      case 0:
-                        id = "block-films-desc-".concat(film.filmId);
-                        wrapper = document.createElement('div');
-                        wrapper.classList.add('block05__movie');
-                        img = document.createElement('img');
-                        img.classList.add('block05__pic');
-                        img.src = film.posterUrlPreview;
-                        img.alt = 'Изображение постера';
-                        wrapper.append(img);
-                        blockFilmsWrapper.append(wrapper);
-
-                      case 9:
-                      case "end":
-                        return _context.stop();
-                    }
-                  }
-                }, _callee);
-              }));
-
-              return function (_x) {
-                return _ref2.apply(this, arguments);
-              };
-            }());
-
-          case 7:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-
-  return function fetchBlockFilms() {
-    return _ref.apply(this, arguments);
-  };
-}();
+    data.films.forEach(async (film) => {
+        const id = `block-films-desc-${film.filmId}`;
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('block05__movie');
+        const img = document.createElement('img');
+        img.classList.add('block05__pic');
+        img.src = film.posterUrlPreview;
+        img.alt = 'Изображение постера';
+        
+        wrapper.append(img);
+        blockFilmsWrapper.append(wrapper);
+    })
+}
 
 fetchBlockFilms();
-/*fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
-    headers: {
-        ...apiHeaders
-    },
-    cors: 'no-cors'
-})
-.then(data => data.json())
-.then(data => {
-    data.films.forEach((film) => {
-        const id = `block-films-desc-${film.filmId}`;
-        blockFilmsWrapper.innerHTML += `
-            <div class="block05__movie">
-                <img class="block05__pic" src="${film.posterUrlPreview}" alt="Фильм">
-                <div class="block05__shadow"></div>
-                <div class="block05__description">
-                    <p class="block05__text1">
-                        ${film.nameRu}
-                    </p>
-                    <p id="${id}" class="block05__text2 paragraph-font">
-                        ...loading
-                    </p>
-                </div>
-            </div>
-        `
-
-        fetch(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${film.filmId}`, {
-            headers: {
-                ...apiHeaders
-            },
-            cors: 'no-cors'
-        })
-        .then(data => data.json())
-        .then(({ data: { description } }) => {
-            const desc = document.getElementById(id);
-            desc.innerText = description;
-
-            if (!description) {
-                const root = desc.parentNode.parentNode;
-
-                blockFilmsWrapper.removeChild(root);
-            }
-        })
-    })
-})
 */
+
+
+fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
+  headers: _objectSpread({}, apiHeaders),
+  cors: 'no-cors'
+}).then(function (data) {
+  return data.json();
+}).then(function (data) {
+  data.films.forEach(function (film) {
+    var id = "block-films-desc-".concat(film.filmId);
+    blockFilmsWrapper.innerHTML += "\n            <div class=\"block05__movie\">\n                <img class=\"block05__pic\" src=\"".concat(film.posterUrlPreview, "\" alt=\"\u0424\u0438\u043B\u044C\u043C\">\n                <div class=\"block05__shadow\"></div>\n                <div class=\"block05__description\">\n                    <p class=\"block05__text1\">\n                        ").concat(film.nameRu, "\n                    </p>\n                    <p id=\"").concat(id, "\" class=\"block05__text2 paragraph-font\">\n                        ...loading\n                    </p>\n                </div>\n            </div>\n        ");
+    fetch("https://kinopoiskapiunofficial.tech/api/v2.1/films/".concat(film.filmId), {
+      headers: _objectSpread({}, apiHeaders),
+      cors: 'no-cors'
+    }).then(function (data) {
+      return data.json();
+    }).then(function (_ref) {
+      var description = _ref.data.description;
+      var desc = document.getElementById(id);
+      desc.innerText = description;
+
+      if (!description) {
+        var root = desc.parentNode.parentNode;
+        blockFilmsWrapper.removeChild(root);
+      }
+    });
+  });
+});

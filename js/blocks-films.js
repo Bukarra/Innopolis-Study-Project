@@ -18,7 +18,7 @@ const filmDetailsRequest = (id) => {
     return kinopoiskapiunofficialRequest(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${id}`)
 }
 
-const fetchBlockFilms = async() => {
+/*const fetchBlockFilms = async() => {
     const result = await topfilmsRequest();
     const data = await result.json();
 
@@ -37,8 +37,9 @@ const fetchBlockFilms = async() => {
 }
 
 fetchBlockFilms();
+*/
 
-/*fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
+fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1', {
     headers: {
         ...apiHeaders
     },
@@ -82,4 +83,4 @@ fetchBlockFilms();
         })
     })
 })
-*/
+
