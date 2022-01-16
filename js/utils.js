@@ -9,5 +9,3 @@ function toHour(num) {
 function toMinutes(num) {
     return `${num}`.padEnd(2, '0');
 }
-
-function a();
