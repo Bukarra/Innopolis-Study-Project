@@ -7,3 +7,4 @@ $(document).ready(function () {
     dots: false
   });
 });
+//# sourceMappingURL=main.js.map

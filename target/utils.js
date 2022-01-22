@@ -11,3 +11,4 @@ function toHour(num) {
 function toMinutes(num) {
   return "".concat(num).padEnd(2, '0');
 }
+//# sourceMappingURL=utils.js.map
