@@ -1,0 +1,1 @@
+{"version":3,"sources":["../js/single-film.js"],"names":["id","URLSearchParams","location","search"],"mappings":";;AAAA,IAAMA,EAAE,GAAG,IAAIC,eAAJ,CAAoBC,QAAQ,CAACC,MAA7B,CAAX","sourcesContent":["const id = new URLSearchParams(location.search);"],"file":"single-film.js"}

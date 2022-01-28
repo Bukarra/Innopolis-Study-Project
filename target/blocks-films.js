@@ -43,11 +43,16 @@ var topfilmsRequest = function topfilmsRequest() {
 
 var filmDetailsRequest = function filmDetailsRequest(id) {
   return kinopoiskapiunofficialRequest("https://kinopoiskapiunofficial.tech/api/v2.2/films/".concat(id));
-};
+}; // const sleep = ms => {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// };
 
-function renderFilmBlock(posterUrl, filmName) {
+
+function renderFilmBlock(posterUrl, filmName, id) {
   var wrapper = document.createElement('div');
   wrapper.classList.add('block05__movie');
+  var link = document.createElement('a');
+  link.href = "/single/?id=".concat(id);
   var img = document.createElement('img');
   img.classList.add('block05__pic');
   img.src = posterUrl;
@@ -62,13 +67,14 @@ function renderFilmBlock(posterUrl, filmName) {
   var desc = document.createElement('p');
   desc.classList.add('block05__text2', 'paragraph-font');
   descWrapper.append(title, desc);
-  wrapper.append(img, shadow, descWrapper);
+  link.append(img, shadow, descWrapper);
+  wrapper.append(link);
   return [wrapper, desc];
 }
 
 var fetchBlockFilms = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-    var result, _yield$result$json, films, requests, filmBlocksMap, elements;
+    var result, _yield$result$json, films, requests, filmBlocksMap, limit, elements;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -87,8 +93,16 @@ var fetchBlockFilms = /*#__PURE__*/function () {
             films = _yield$result$json.films;
             requests = [];
             filmBlocksMap = new Map();
+            limit = 5;
             films.forEach(function (film) {
-              var _renderFilmBlock = renderFilmBlock(film.posterUrlPreview, film.nameRu),
+              if (limit < 1) {
+                return;
+              }
+
+              ;
+              limit--;
+
+              var _renderFilmBlock = renderFilmBlock(film.posterUrlPreview, film.nameRu, film.filmId),
                   _renderFilmBlock2 = _slicedToArray(_renderFilmBlock, 2),
                   filmLayout = _renderFilmBlock2[0],
                   desc = _renderFilmBlock2[1];
@@ -111,7 +125,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
 
                         case 5:
                           detailsData = _context.sent;
-                          description = detailsData.data.description;
+                          description = detailsData.description;
 
                           if (!description) {
                             filmBlocksMap["delete"](film.filmId);
@@ -134,10 +148,10 @@ var fetchBlockFilms = /*#__PURE__*/function () {
                 };
               }()));
             });
-            _context2.next = 12;
+            _context2.next = 13;
             return Promise.all(requests);
 
-          case 12:
+          case 13:
             // let i = 0;
             // for (const [, element] of filmBlocksMap) {
             //     blockFilmsWrapper.append(element)
@@ -149,7 +163,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
             elements = _toConsumableArray(filmBlocksMap.values()).slice(0, 9);
             blockFilmsWrapper.append.apply(blockFilmsWrapper, _toConsumableArray(elements));
 
-          case 14:
+          case 15:
           case "end":
             return _context2.stop();
         }

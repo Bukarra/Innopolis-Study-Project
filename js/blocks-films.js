@@ -17,32 +17,41 @@ const topfilmsRequest = () => {
 const filmDetailsRequest = (id) => {
     return kinopoiskapiunofficialRequest(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`)
 }
+// const sleep = ms => {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// };
 
-function renderFilmBlock (posterUrl, filmName) {
+
+function renderFilmBlock (posterUrl, filmName, id) {
     const wrapper = document.createElement('div');
-        wrapper.classList.add('block05__movie');
-        const img = document.createElement('img');
-        img.classList.add('block05__pic');
-        img.src = posterUrl;
-        img.alt = 'Изображение постера';
+    wrapper.classList.add('block05__movie');
 
-        const shadow = document.createElement('div');
-        shadow.classList.add('block05__shadow');
+    const link = document.createElement('a');
+    link.href = `/single/?id=${id}`;
+
+    const img = document.createElement('img');
+    img.classList.add('block05__pic');
+    img.src = posterUrl;
+    img.alt = 'Изображение постера';
+
+    const shadow = document.createElement('div');
+    shadow.classList.add('block05__shadow');
         
-        const descWrapper = document.createElement('div');
-        descWrapper.classList.add('block05__description');
+    const descWrapper = document.createElement('div');
+    descWrapper.classList.add('block05__description');
 
-        const title = document.createElement('p');
-        title.classList.add('block05__text1');
-        title.textContent = filmName;
+    const title = document.createElement('p');
+    title.classList.add('block05__text1');
+    title.textContent = filmName;
         
-        const desc = document.createElement('p');
-        desc.classList.add('block05__text2', 'paragraph-font');
+    const desc = document.createElement('p');
+    desc.classList.add('block05__text2', 'paragraph-font');
 
-        descWrapper.append(title, desc);
-        wrapper.append(img, shadow, descWrapper);
+    descWrapper.append(title, desc);
+    link.append(img, shadow, descWrapper);
+    wrapper.append(link);
 
-        return [wrapper, desc];
+    return [wrapper, desc];
 }
 
 const fetchBlockFilms = async() => {
@@ -52,15 +61,22 @@ const fetchBlockFilms = async() => {
     const requests = [];
     const filmBlocksMap = new Map();
 
+    let limit = 5;
+
     films.forEach((film) => {
-        const [filmLayout, desc] = renderFilmBlock(film.posterUrlPreview, film.nameRu);
+        if (limit < 1) {
+            return;
+        };
+        limit --;
+
+        const [filmLayout, desc] = renderFilmBlock(film.posterUrlPreview, film.nameRu, film.filmId);
         filmBlocksMap.set(film.filmId, filmLayout);
 
         requests.push(new Promise(async (resolve, reject) => {
             const detailResult = await filmDetailsRequest(film.filmId);
             const detailsData = await detailResult.json();
             
-            const description = detailsData.data.description;
+            const description = detailsData.description;
 
             if(!description) {
             filmBlocksMap.delete(film.filmId)
