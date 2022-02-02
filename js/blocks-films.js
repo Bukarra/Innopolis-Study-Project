@@ -1,26 +1,9 @@
 const blockFilmsWrapper = document.getElementById('block05-films-wrapper');
 blockFilmsWrapper.innerHTML = '';
 
-const kinopoiskapiunofficialRequest = (url) => {
-    return fetch (url, {
-        headers: {
-            'accept': 'application/json',
-            'X-API-KEY': '5ba46513-d50f-4e8e-860e-e354b5ebbaa6',
-        },
-        cors: 'no-cors'
-    });
-}
-
-const topfilmsRequest = () => {
-    return kinopoiskapiunofficialRequest('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1')
-}
-const filmDetailsRequest = (id) => {
-    return kinopoiskapiunofficialRequest(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`)
-}
 // const sleep = ms => {
 //   return new Promise(resolve => setTimeout(resolve, ms));
 // };
-
 
 function renderFilmBlock (posterUrl, filmName, id) {
     const wrapper = document.createElement('div');
@@ -72,7 +55,7 @@ const fetchBlockFilms = async() => {
         const [filmLayout, desc] = renderFilmBlock(film.posterUrlPreview, film.nameRu, film.filmId);
         filmBlocksMap.set(film.filmId, filmLayout);
 
-        requests.push(new Promise(async (resolve, reject) => {
+        requests.push(new Promise(async (resolve) => {
             const detailResult = await filmDetailsRequest(film.filmId);
             const detailsData = await detailResult.json();
             

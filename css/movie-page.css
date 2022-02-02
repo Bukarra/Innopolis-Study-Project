@@ -57,7 +57,23 @@
     margin-top: 1.4rem;
     display: flex;
     width: 4.5rem;
-    justify-content: space-between;
+    color: #7a7d72;
+}
+
+.star_selected {
+    color: #A3CC40;
+}
+
+.movie-page__ratestars:hover {
+    color: #A3CC40;
+}
+
+.rating-star:hover~.rating-star {
+    color: #7a7d72;
+}
+
+.movie-page__ratestars svg {
+    padding-right: .15rem;
 }
 
 .movie-page__ratenumber1 {
@@ -65,7 +81,7 @@
     font-size: .64rem;
     line-height: 1.3;
     color: #A1A1A1;
-    margin: 1.4rem 0 0 .6rem;
+    margin: 1.4rem 0 0 .4rem;
 }
 
 .movie-page__ratenumber2 {

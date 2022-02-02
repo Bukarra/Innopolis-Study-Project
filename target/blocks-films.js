@@ -25,28 +25,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var blockFilmsWrapper = document.getElementById('block05-films-wrapper');
-blockFilmsWrapper.innerHTML = '';
-
-var kinopoiskapiunofficialRequest = function kinopoiskapiunofficialRequest(url) {
-  return fetch(url, {
-    headers: {
-      'accept': 'application/json',
-      'X-API-KEY': '5ba46513-d50f-4e8e-860e-e354b5ebbaa6'
-    },
-    cors: 'no-cors'
-  });
-};
-
-var topfilmsRequest = function topfilmsRequest() {
-  return kinopoiskapiunofficialRequest('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_AWAIT_FILMS&page=1');
-};
-
-var filmDetailsRequest = function filmDetailsRequest(id) {
-  return kinopoiskapiunofficialRequest("https://kinopoiskapiunofficial.tech/api/v2.2/films/".concat(id));
-}; // const sleep = ms => {
+blockFilmsWrapper.innerHTML = ''; // const sleep = ms => {
 //   return new Promise(resolve => setTimeout(resolve, ms));
 // };
-
 
 function renderFilmBlock(posterUrl, filmName, id) {
   var wrapper = document.createElement('div');
@@ -109,7 +90,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
 
               filmBlocksMap.set(film.filmId, filmLayout);
               requests.push(new Promise( /*#__PURE__*/function () {
-                var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(resolve, reject) {
+                var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(resolve) {
                   var detailResult, detailsData, description;
                   return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
@@ -143,7 +124,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
                   }, _callee);
                 }));
 
-                return function (_x, _x2) {
+                return function (_x) {
                   return _ref2.apply(this, arguments);
                 };
               }()));
