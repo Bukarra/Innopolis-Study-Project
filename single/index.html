@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/movie-page.css">
+
+    <script defer src="/libs/polyfill/polyfill.min.js"></script>
     <script defer src="/target/utils.js"></script>
     <script defer src="/target/single-film.js"></script>
 
@@ -141,11 +143,8 @@
                             <span class="movie-page__ratenumber1">
                                 5.0
                             </span>
-                            <span class="movie-page__ratenumber2">
-                                9/10
-                            </span>
                             <span class="movie-page__rateservice">
-                                Rotten Tomatoes
+                                Inno Rating
                             </span>
                         </div>
                         <div class="movie-page__row">
@@ -167,7 +166,7 @@
                                         d="M6 2.25C3.5 2.25 1.365 3.805 0.5 6C1.365 8.195 3.5 9.75 6 9.75C8.5 9.75 10.635 8.195 11.5 6C10.635 3.805 8.5 2.25 6 2.25ZM6 8.5C4.62 8.5 3.5 7.38 3.5 6C3.5 4.62 4.62 3.5 6 3.5C7.38 3.5 8.5 4.62 8.5 6C8.5 7.38 7.38 8.5 6 8.5ZM6 4.5C5.17 4.5 4.5 5.17 4.5 6C4.5 6.83 5.17 7.5 6 7.5C6.83 7.5 7.5 6.83 7.5 6C7.5 5.17 6.83 4.5 6 4.5Z"
                                         fill="#A3CC40" />
                                 </svg>
-                                <span class="movie-page__views-number">
+                                <span class="movie-page__views-number" id="sf-views">
                                     2.5K Views
                                 </span>
                             </div>
@@ -178,7 +177,7 @@
                                         d="M6 10.675L5.275 10.015C2.7 7.68 1 6.14 1 4.25C1 2.71 2.21 1.5 3.75 1.5C4.62 1.5 5.455 1.905 6 2.545C6.545 1.905 7.38 1.5 8.25 1.5C9.79 1.5 11 2.71 11 4.25C11 6.14 9.3 7.68 6.725 10.02L6 10.675Z"
                                         fill="#A3CC40" />
                                 </svg>
-                                <span class="movie-page__likes-number">
+                                <span class="movie-page__likes-number" id="sf-likes">
                                     200 Likes
                                 </span>
                             </div>

@@ -74,7 +74,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
             films = _yield$result$json.films;
             requests = [];
             filmBlocksMap = new Map();
-            limit = 5;
+            limit = 6;
             films.forEach(function (film) {
               if (limit < 1) {
                 return;

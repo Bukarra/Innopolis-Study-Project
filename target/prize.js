@@ -100,7 +100,7 @@ function handleSubmit(event) {
     email: emailValue,
     prize: selectPrize.value
   };
-  var url = new URL('http://inno-ijl.ru/multystub/stc-21-03/feedback');
+  var url = new URL('https://inno-js.ru/multystub/stc-21-03/feedback');
   url.search = new URLSearchParams(data).toString();
   fetch(url.toString()).then(function (data) {
     return data.json();

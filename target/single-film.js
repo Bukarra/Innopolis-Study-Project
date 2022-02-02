@@ -46,16 +46,44 @@ var fetchKinopoiskFilmData = /*#__PURE__*/function () {
   };
 }();
 
-fetchKinopoiskFilmData(); // filmDetailsRequest(filmId)
-//     .then(answer => answer.json())
-//     .then((filmInfo) => {
-//         const header = document.getElementById('sf-header');
-//         const description = document.querySelector('#sf-description');
-//         const posterImage = document.querySelector('#sf-poster');
-//         const premiereYear = document.getElementById('sf-premiere');
-//         header.textContent = filmInfo.nameRu;
-//         description.textContent = filmInfo.description;
-//         posterImage.src = filmInfo.posterUrl;
-//         premiereYear.textContent = filmInfo.year;
-//     })
+var fetchFilmMeta = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+    var answer, _yield$answer$json, body, views, likes;
+
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return fetch("https://inno-js.ru/multystub/stc-21-03/film/".concat(filmId));
+
+          case 2:
+            answer = _context2.sent;
+            _context2.next = 5;
+            return answer.json();
+
+          case 5:
+            _yield$answer$json = _context2.sent;
+            body = _yield$answer$json.body;
+            views = document.getElementById('sf-views');
+            likes = document.getElementById('sf-likes');
+            views.textContent = "".concat(body.views, " Views");
+            likes.textContent = "".concat(body.likes, " Likes");
+            console.log(body);
+
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function fetchFilmMeta() {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+fetchKinopoiskFilmData();
+fetchFilmMeta();
 //# sourceMappingURL=single-film.js.map
