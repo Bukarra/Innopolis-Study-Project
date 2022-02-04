@@ -1,4 +1,6 @@
 const searchParams = new URLSearchParams(location.search);
+const likes = document.getElementById('sf-likes');
+const stars = document.querySelectorAll('.rating-star');
 
 const filmId = searchParams.get('id');
 
@@ -22,12 +24,56 @@ const fetchFilmMeta = async () => {
     const { body } = await answer.json();
 
     const views = document.getElementById('sf-views');
-    const likes = document.getElementById('sf-likes');
+    const ratingNumber = document.getElementById('sf-rating-number');
 
     views.textContent = `${body.views} Views`;
     likes.textContent = `${body.likes} Likes`;
+    const rating = body.ratings.reduce((a, b) => +a + +b, 0) / body.ratings.length;
+    const intRating = Math.round(rating);
+    ratingNumber.textContent = Math.floor(rating * 10) / 10;
 
-    console.log(body);
+    for (let i = 0; i < stars.length; i++) {      
+        if(i >= intRating) break;
+
+        const star = stars[i];
+        star.classList.add('star_selected');
+    }
+}
+
+const likeIcon = document.querySelector('.like-icon');
+likeIcon.addEventListener('click', () => {
+    if(!likeIcon.classList.contains('like-icon_liked')) {
+        const likesCount = parseInt(likes.textContent, 10) + 1;
+
+        likes.innerText = `${likesCount} Likes`;
+        likeIcon.classList.add('like-icon_liked');
+
+        fetch(
+            `https://inno-js.ru/multystub/stc-21-03/film/${filmId}/like`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }
+        )
+    }
+});
+
+for (const star of stars) {
+    star.addEventListener('click', function() {
+
+        fetch(
+            `https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ rating: +star.dataset.value })
+            }
+        )
+    })
 }
 
 fetchKinopoiskFilmData();

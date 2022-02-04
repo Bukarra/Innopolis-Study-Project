@@ -124,23 +124,23 @@
                         <h1 class="movie-page__headline" id="sf-header">Загрузка...</h1>
                         <div class="movie-page__row">
                             <div class="movie-page__ratestars">
-                                <svg class="rating-star star_selected" width=".8rem" height=".8rem">
+                                <svg data-value="1" class="rating-star" width=".8rem" height=".8rem">
                                     <use xlink:href="#ratestar"></use>
                                 </svg>
-                                <svg class="rating-star star_selected" width=".8rem" height=".8rem">
+                                <svg data-value="2" class="rating-star" width=".8rem" height=".8rem">
                                     <use xlink:href="#ratestar"></use>
                                 </svg>
-                                <svg class="rating-star star_selected" width=".8rem" height=".8rem">
+                                <svg data-value="3" class="rating-star" width=".8rem" height=".8rem">
                                     <use xlink:href="#ratestar"></use>
                                 </svg>
-                                <svg class="rating-star star_selected" width=".8rem" height=".8rem">
+                                <svg data-value="4" class="rating-star" width=".8rem" height=".8rem">
                                     <use xlink:href="#ratestar"></use>
                                 </svg>
-                                <svg class="rating-star star_selected" width=".8rem" height=".8rem">
+                                <svg data-value="5" class="rating-star" width=".8rem" height=".8rem">
                                     <use xlink:href="#ratestar"></use>
                                 </svg>
                             </div>
-                            <span class="movie-page__ratenumber1">
+                            <span class="movie-page__ratenumber1" id="sf-rating-number">
                                 5.0
                             </span>
                             <span class="movie-page__rateservice">
@@ -171,11 +171,11 @@
                                 </span>
                             </div>
                             <div class="movie-page__likes">
-                                <svg width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
+                                <svg class="like-icon" width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6 10.675L5.275 10.015C2.7 7.68 1 6.14 1 4.25C1 2.71 2.21 1.5 3.75 1.5C4.62 1.5 5.455 1.905 6 2.545C6.545 1.905 7.38 1.5 8.25 1.5C9.79 1.5 11 2.71 11 4.25C11 6.14 9.3 7.68 6.725 10.02L6 10.675Z"
-                                        fill="#A3CC40" />
+                                        fill="currentColor" />
                                 </svg>
                                 <span class="movie-page__likes-number" id="sf-likes">
                                     200 Likes
