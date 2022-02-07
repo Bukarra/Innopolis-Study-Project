@@ -28,9 +28,13 @@ const fetchFilmMeta = async () => {
 
     views.textContent = `${body.views} Views`;
     likes.textContent = `${body.likes} Likes`;
-    const rating = body.ratings.reduce((a, b) => +a + +b, 0) / body.ratings.length;
+    const rating = body.ratings.reduce((a, b) => parseInt(a) + parseInt(b), 0) / body.ratings.length;
     const intRating = Math.round(rating);
-    ratingNumber.textContent = Math.floor(rating * 10) / 10;
+    if (isNaN(intRating)) {
+        ratingNumber.textContent = '0.0';
+    } else {
+        ratingNumber.textContent = Math.floor(rating * 10) / 10;
+    }
 
     for (let i = 0; i < stars.length; i++) {      
         if(i >= intRating) break;
@@ -61,18 +65,18 @@ likeIcon.addEventListener('click', () => {
 });
 
 for (const star of stars) {
-    star.addEventListener('click', function() {
+    star.addEventListener('click', async () => {
 
-        fetch(
-            `https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
+        await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
             {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ rating: +star.dataset.value })
-            }
-        )
+            });
+
+        fetchFilmMeta();
     })
 }
 

@@ -245,6 +245,10 @@ body {
     color: #A3CC40;
 }
 
+.block01__dropdown-trigger {
+    text-decoration: none;
+}
+
 .block01__dropdown-trigger span {
     font-weight: 500;
     font-size: .6rem;
@@ -1069,4 +1073,14 @@ input:checked+.block08__tick {
 .block10__text {
     margin-left: 4.4rem;
     padding-bottom: 1.2rem;
+}
+
+#scroll-icon {
+    display: none;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 99;
+    overflow: visible;
+    cursor: pointer;
 }

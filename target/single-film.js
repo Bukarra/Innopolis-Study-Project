@@ -78,10 +78,16 @@ var fetchFilmMeta = /*#__PURE__*/function () {
             views.textContent = "".concat(body.views, " Views");
             likes.textContent = "".concat(body.likes, " Likes");
             rating = body.ratings.reduce(function (a, b) {
-              return +a + +b;
+              return parseInt(a) + parseInt(b);
             }, 0) / body.ratings.length;
             intRating = Math.round(rating);
-            ratingNumber.textContent = Math.floor(rating * 10) / 10;
+
+            if (isNaN(intRating)) {
+              ratingNumber.textContent = '0.0';
+            } else {
+              ratingNumber.textContent = Math.floor(rating * 10) / 10;
+            }
+
             i = 0;
 
           case 15:
@@ -140,17 +146,32 @@ var _iterator = _createForOfIteratorHelper(stars),
 try {
   var _loop = function _loop() {
     var star = _step.value;
-    star.addEventListener('click', function () {
-      fetch("https://inno-js.ru/multystub/stc-21-03/film/".concat(filmId, "/rating"), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          rating: +star.dataset.value
-        })
-      });
-    });
+    star.addEventListener('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return fetch("https://inno-js.ru/multystub/stc-21-03/film/".concat(filmId, "/rating"), {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  rating: +star.dataset.value
+                })
+              });
+
+            case 2:
+              fetchFilmMeta();
+
+            case 3:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    })));
   };
 
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
