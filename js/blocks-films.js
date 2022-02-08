@@ -1,5 +1,4 @@
 const blockFilmsWrapper = document.getElementById('block05-films-wrapper');
-blockFilmsWrapper.innerHTML = '';
 
 // const sleep = ms => {
 //   return new Promise(resolve => setTimeout(resolve, ms));
@@ -82,6 +81,8 @@ const fetchBlockFilms = async() => {
     //         break;
     //     }
     // }
+
+    blockFilmsWrapper.innerHTML = '';
 
     const elements = [...filmBlocksMap.values()].slice(0, 9);
 

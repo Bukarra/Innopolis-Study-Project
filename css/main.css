@@ -1084,3 +1084,60 @@ input:checked+.block08__tick {
     overflow: visible;
     cursor: pointer;
 }
+
+.skeleton-film-box {
+    width: 14.2rem;
+    height: 14.2rem;
+    border-radius: 1%;
+    animation: shine-avatar 3s infinite linear;
+}
+
+.skeleton-film-box:nth-child(1) {
+    animation-delay: -.2s;
+}
+
+.skeleton-film-box:nth-child(2) {
+    animation-delay: -.4s;
+}
+
+.skeleton-film-box:nth-child(3) {
+    animation-delay: -.6s;
+}
+
+.skeleton-film-box:nth-child(4) {
+    animation-delay: -.8s;
+}
+
+.skeleton-film-box:nth-child(5) {
+    animation-delay: -1s;
+}
+
+.skeleton-film-box:nth-child(6) {
+    animation-delay: -1.2s;
+}
+
+.skeleton-film-box:nth-child(7) {
+    animation-delay: -1.4s;
+}
+
+.skeleton-film-box:nth-child(8) {
+    animation-delay: -1.6s;
+}
+
+.skeleton-film-box:nth-child(9) {
+    animation-delay: -1.8s;
+}
+
+@keyframes shine-avatar {
+    0% {
+        background-color: #ccc;
+    }
+
+    50% {
+        background-color: gray;
+    }
+
+    100% {
+        background-color: #ccc;
+    }
+}

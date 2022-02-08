@@ -44,9 +44,15 @@ const fetchFilmMeta = async () => {
     }
 }
 
-const likeIcon = document.querySelector('.like-icon');
+const likeIcon = document.querySelector('.like-icon');4
+const FILM_KEY = `film-${filmId}`;
+const liked = localStorage.getItem(FILM_KEY);
+if (liked !== null) {
+    likeIcon.classList.add('like-icon_liked');
+}
 likeIcon.addEventListener('click', () => {
     if(!likeIcon.classList.contains('like-icon_liked')) {
+        localStorage.setItem(FILM_KEY, true);
         const likesCount = parseInt(likes.textContent, 10) + 1;
 
         likes.innerText = `${likesCount} Likes`;
@@ -64,21 +70,33 @@ likeIcon.addEventListener('click', () => {
     }
 });
 
-for (const star of stars) {
-    star.addEventListener('click', async () => {
+// for (const star of stars) {
+//     star.addEventListener('click', async () => {
+//         await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
+//             {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({ rating: +star.dataset.value })
+//             });
 
-        await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
+//         fetchFilmMeta();
+//     })
+// }
+
+$('.movie-page__ratestars').on('click', '.rating-star', async function() {
+    await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
             {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ rating: +star.dataset.value })
+                body: JSON.stringify({ rating: +this.dataset.value })
             });
 
-        fetchFilmMeta();
-    })
-}
+    fetchFilmMeta();
+})
 
 fetchKinopoiskFilmData();
 fetchFilmMeta();
