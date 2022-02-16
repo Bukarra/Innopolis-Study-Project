@@ -113,7 +113,6 @@ body {
     font-family: 'IBM_Plex_Sans';
 }
 
-/** Компоненты */
 /** Блок 1 */
 .block01 {
     background: url('../images/block01_background.jpg') no-repeat center / cover,
@@ -137,28 +136,27 @@ body {
 
 .container .block01__inner {
     padding-top: 2.14rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .block01__col1 {
-    float: left;
     margin-right: 2.24rem;
     padding-top: 0.24rem;
 }
 
-.block01__col2 {
-    float: left;
+.block01__row1,
+.block01__row2 {
+    display: flex;
+    flex-direction: row;
 }
 
-.block01__tel,
-.block01__mail,
-.block01__address,
-.block01__call {
-    float: left;
-    margin-bottom: 0.6rem;
+.block01__row1 {
+    padding-bottom: .6rem;
 }
 
 .block01__address {
-    font-size: 0.6rem;
+    font-size: .6rem;
     font-weight: 500;
     line-height: 1.32;
     color: #FFF;
@@ -166,42 +164,25 @@ body {
 }
 
 .block01__call {
-    margin-right: 5.4rem;
-    border-radius: .2rem;
+    margin-right: 5.3rem;
 }
 
 .block01__button {
-    width: 6.4rem;
     height: 1rem;
     background-color: #fff;
-    border: 1px solid #EDEDED;
+    border: 2px solid #EDEDED;
     border-radius: .2rem;
     font-size: .6rem;
     font-weight: 500;
     line-height: 1.32;
-    color: #333333;
-    transform: 0.2s;
 }
 
 .block01__button:hover {
     background: #A3CC40;
     color: #FFFFFF;
-    border: 2px solid #EAEDE2;
 }
 
 .block01__button svg {
-    fill: #333333;
-}
-
-.block01__button:hover svg {
-    fill: #fff;
-}
-
-.block01__call-text {
-    text-decoration: none;
-}
-
-.block01__call svg {
     fill: #333333;
     display: inline-block;
     vertical-align: top;
@@ -209,12 +190,15 @@ body {
     margin-right: 3px;
 }
 
+.block01__button:hover svg {
+    fill: #fff;
+}
+
 .block01__row1_margin {
     margin-right: 2.74rem;
 }
 
 .block01__lang {
-    float: right;
     text-transform: uppercase;
 }
 
@@ -262,7 +246,6 @@ body {
     display: inline-block;
     margin-top: 2px;
     fill: #FFF;
-    transform: 0.2s;
 }
 
 .block01__dropdown-trigger:hover span {
@@ -279,14 +262,6 @@ body {
 
 .dropdown_opened .block01__dropdown-list {
     display: block;
-}
-
-.block01__section1,
-.block01__section2,
-.block01__section3,
-.block01__section4,
-.block01__section5 {
-    float: left;
 }
 
 .block01__upper {
