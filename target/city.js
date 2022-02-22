@@ -29,7 +29,7 @@ var cityData = /*#__PURE__*/function () {
           case 5:
             _yield$asnwer$json = _context.sent;
             name_ru = _yield$asnwer$json.city.name_ru;
-            console.log(name_ru);
+            $('#city-link').html(name_ru + ',');
 
           case 8:
           case "end":
@@ -42,7 +42,17 @@ var cityData = /*#__PURE__*/function () {
   return function cityData() {
     return _ref.apply(this, arguments);
   };
-}();
+}(); // $('#city-input').on('focus', function () {
+//     $('#city-input').val('');
+// })
 
+
+$('#city-input').on('keyup change', function () {
+  var inputValue = $('#city-input').val();
+  $('#city-popup').on('click', function () {
+    $('#city-link').html(inputValue + ',');
+    $('#city-input').val('');
+  });
+});
 cityData();
 //# sourceMappingURL=city.js.map

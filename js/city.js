@@ -7,8 +7,24 @@ const getRequest = (url) => {
 const cityData = async () => {
     const asnwer = await getRequest(SYPEX_URL);
     const { city:{ name_ru } } = await asnwer.json();
-    console.log(name_ru);
+
+    $('#city-link').html(name_ru+',');
+
 }
 
-cityData();
+// $('#city-input').on('focus', function () {
+//     $('#city-input').val('');
+// })
 
+$('#city-input').on('keyup change', function () {
+    const inputValue = $('#city-input').val(); 
+
+    $('#city-popup').on('click', function () {
+       $('#city-link').html(inputValue+',');
+       $('#city-input').val('');
+    })
+    
+})
+
+
+cityData();

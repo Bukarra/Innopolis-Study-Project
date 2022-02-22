@@ -81,7 +81,7 @@ body {
     font-weight: 500;
     line-height: 1.32;
     color: #FFF;
-    transform: 0.2s;
+    transition: 0.2s;
     text-decoration: none;
 }
 
@@ -94,7 +94,7 @@ body {
     font-weight: 500;
     line-height: 1.33;
     color: #FFF;
-    transform: 0.2s;
+    transition: 0.2s;
     text-decoration: none;
 }
 
@@ -163,6 +163,11 @@ body {
     margin-top: .32rem;
 }
 
+.block01__address a {
+    text-decoration: none;
+    color: #FFF;
+}
+
 .block01__call {
     margin-right: 5.3rem;
 }
@@ -219,7 +224,7 @@ body {
     font-size: .6rem;
     font-weight: 500;
     color: #FFF;
-    transform: 0.2s;
+    transition: .2s;
     text-decoration: none;
     padding: .4rem .74rem;
     display: block;
@@ -238,7 +243,7 @@ body {
     font-size: .6rem;
     color: #FFF;
     display: inline-block;
-    transform: 0.2s;
+    transition: .2s;
 }
 
 .block01__dropdown-trigger svg {
@@ -600,7 +605,7 @@ input:checked+svg {
     padding: 1rem 1.2rem 0;
     background: rgba(144, 210, 61, 0.4);
     transform: translateY(100%);
-    transform: 0.2s;
+    transition: .2s;
     transition-delay: 0.4s;
     box-sizing: border-box;
 }
@@ -616,7 +621,7 @@ input:checked+svg {
     height: 100%;
     width: 100%;
     background: rgba(22, 22, 22, 0.8);
-    transform: 0.2s;
+    transition: .2s;
 }
 
 .block05__movie:hover .block05__shadow {

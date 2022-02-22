@@ -21,7 +21,7 @@ function initializeField(field) {
     reset();
     
     function clearError() {
-        field.classList.remove(FOCUSED_CLASS_NAME);
+        field.classList.remove(ERROR_CLASS_NAME);
         fieldError.innerText = '';
     }
 
@@ -41,7 +41,7 @@ function initializeField(field) {
 
     function reset() {
         input.value = '';
-        field.classList.remove(ERROR_CLASS_NAME);
+        field.classList.remove(FOCUSED_CLASS_NAME);
         clearError();
     }
 
@@ -94,7 +94,7 @@ function handleSubmit(event) {
         return;
     }
 
-    if(!selectPrize.value === 'none') {
+    if(selectPrize.value === 'none') {
         selectPrize.classList.add(ERROR_CLASS_NAME);
         return;
     }
