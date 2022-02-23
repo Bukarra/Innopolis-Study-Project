@@ -57,6 +57,11 @@
     border-radius: .2rem;
 }
 
+.modal__name:hover {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
 .modal__error {
     font-size: .8rem;
     font-weight: normal;

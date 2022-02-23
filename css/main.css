@@ -1121,3 +1121,35 @@ input:checked+.block08__tick {
         background-color: #ccc;
     }
 }
+
+.city-wrapper {
+    background-color: #FFF;
+    max-width: 25rem;
+    min-height: 4rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.city-input__name {
+    font-size: .8rem;
+    padding: .4rem .8rem;
+    background: #DEDEDE;
+    width: 100%;
+    border: 0;
+    border-radius: .2rem;
+}
+
+.city-input__label {
+    position: absolute;
+    left: 2rem;
+    top: 1.7rem;
+    font-size: .8rem;
+    font-weight: normal;
+    line-height: 1.26;
+    color: #A1A1A1;
+}
+
+.city-input__name:hover {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
