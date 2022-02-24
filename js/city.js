@@ -12,19 +12,15 @@ const cityData = async () => {
 
 }
 
-// $('#city-input').on('focus', function () {
-//     $('#city-input').val('');
-// })
-
 $('#city-input').on('keyup change', function () {
+    
     const inputValue = $('#city-input').val(); 
 
     $('#city-popup').on('click', function () {
-       $('#city-link').html(inputValue+',');
        $('#city-input').val('');
+       $('#city-link').html(inputValue+',');
     })
     
 })
-
 
 cityData();

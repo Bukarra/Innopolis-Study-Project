@@ -42,16 +42,13 @@ var cityData = /*#__PURE__*/function () {
   return function cityData() {
     return _ref.apply(this, arguments);
   };
-}(); // $('#city-input').on('focus', function () {
-//     $('#city-input').val('');
-// })
-
+}();
 
 $('#city-input').on('keyup change', function () {
   var inputValue = $('#city-input').val();
   $('#city-popup').on('click', function () {
-    $('#city-link').html(inputValue + ',');
     $('#city-input').val('');
+    $('#city-link').html(inputValue + ',');
   });
 });
 cityData();
