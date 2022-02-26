@@ -15,6 +15,7 @@ function popupToggle() {
 var ERROR_CLASS_NAME = 'modal__input_error';
 var FOCUSED_CLASS_NAME = 'modal__input_filled';
 var SELECT_SELECTED = 'modal__select_selected';
+var SELECT_ERROR = 'modal__select-error';
 
 function initializeField(field) {
   var input = field.getElementsByTagName('input')[0];
@@ -67,6 +68,7 @@ openBtn.addEventListener('click', function () {
 });
 selectPrize.addEventListener('change', function () {
   selectPrize.classList.add('modal__select_selected');
+  selectPrize.classList.remove(SELECT_ERROR);
 });
 closeBtn.onclick = popupToggle;
 
@@ -90,8 +92,8 @@ function handleSubmit(event) {
     return;
   }
 
-  if (selectPrize.value === 'none') {
-    selectPrize.classList.add(ERROR_CLASS_NAME);
+  if (!selectPrize.value === 'none') {
+    selectPrize.classList.add(SELECT_ERROR);
     return;
   }
 

@@ -13,6 +13,7 @@ function popupToggle() {
 const ERROR_CLASS_NAME = 'modal__input_error';
 const FOCUSED_CLASS_NAME = 'modal__input_filled';
 const SELECT_SELECTED = 'modal__select_selected';
+const SELECT_ERROR = 'modal__select-error';
 
 function initializeField(field) {
     const input = field.getElementsByTagName('input')[0];
@@ -70,6 +71,7 @@ openBtn.addEventListener('click', () => {
 
 selectPrize.addEventListener('change', () => {
     selectPrize.classList.add('modal__select_selected');
+    selectPrize.classList.remove(SELECT_ERROR);
 });
 
 closeBtn.onclick = popupToggle;
@@ -94,8 +96,8 @@ function handleSubmit(event) {
         return;
     }
 
-    if(selectPrize.value === 'none') {
-        selectPrize.classList.add(ERROR_CLASS_NAME);
+    if(!selectPrize.value === 'none') {
+        selectPrize.classList.add(SELECT_ERROR);
         return;
     }
 

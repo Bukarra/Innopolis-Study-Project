@@ -122,9 +122,19 @@
     padding-left: .5rem;
 }
 
+.modal__select:hover {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
 .modal__select_selected {
     background-color: #fff;
     box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
+.modal__select-error {
+    box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
+    background: #FFF;
 }
 
 .modal__checkbox {

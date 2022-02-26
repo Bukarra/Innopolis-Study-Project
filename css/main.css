@@ -841,7 +841,7 @@ input:checked+svg {
 .block08__form {
     float: right;
     width: 17.6rem;
-    height: 23rem;
+    min-height: 23rem;
     margin-right: 2rem;
     margin-top: 1.6rem;
 }
@@ -862,6 +862,11 @@ input:checked+svg {
     border-radius: .2rem;
 }
 
+.block08__name:hover {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
 .block08__label1 {
     position: absolute;
     left: .8rem;
@@ -870,6 +875,61 @@ input:checked+svg {
     font-size: .8rem;
     line-height: 1.26;
     color: #A1A1A1;
+}
+
+.block08__error {
+    font-size: .8rem;
+    font-weight: normal;
+    color: red;
+    padding-left: .8rem;
+}
+
+.block08__input_filled .block08__label1 {
+    top: -0.7rem;
+    left: .5rem;
+    color: #333333;
+    transition: .2s;
+    background: #FFF;
+    padding: 0 .3rem;
+}
+
+.block08__input_filled .block08__name {
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+    background: #FFF;
+}
+
+.block08__input_error .block08__name {
+    box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
+    background: #FFF;
+}
+
+.block08__select {
+    border-radius: .2rem;
+    min-height: 1.8rem;
+    font-weight: normal;
+    font-size: .8rem;
+    line-height: 1.26;
+    color: #A1A1A1;
+    background: #DEDEDE;
+    border: 0;
+    width: 100%;
+    padding-left: .5rem;
+    margin-bottom: 1.8rem;
+}
+
+.block08__select:hover {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
+.block08__select_selected {
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem rgba(170, 243, 77, 0.52);
+}
+
+.block08__select-error {
+    box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
+    background: #FFF;
 }
 
 .block08__icon {
@@ -918,7 +978,7 @@ input:checked+.block08__tick {
 }
 
 .block08__button {
-    width: 17.2rem;
+    width: 100%;
     height: 2.8rem;
     border: 0;
     background: #A3CC40;
@@ -932,6 +992,17 @@ input:checked+.block08__tick {
     font-size: 1rem;
     line-height: 1.3;
     color: #FFFFFF;
+}
+
+.block08__button:hover {
+    background: #fff;
+    border: 1px solid rgba(163, 204, 64, 0.62);
+    color: #A3CC40;
+    box-shadow: 0 .1rem .4rem rgba(144, 210, 61, 0.3);
+}
+
+.block08__button:hover .block08__submit {
+    color: #A3CC40;
 }
 
 /** Блок 9 */

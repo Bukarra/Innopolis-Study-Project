@@ -28,6 +28,8 @@
     <script defer src="target/prize.js"></script>
     <script defer src="target/blocks-films.js"></script>
     <script defer src="target/city.js"></script>
+    <script defer src="target/modal2.js"></script>
+
 
     <title>Учебный проект сайта</title>
 </head>
@@ -552,23 +554,24 @@
                 <h3 class="block08__headline">
                     Обратная связь
                 </h3>
-                <form id="form1" action="/order" method="POST">
-                    <div class="block08__input">
-                        <label for="input01" class="block08__label1">Полное имя</label>
-                        <input type="text" class="block08__name" id="input01" name="fullname" value="" required>
+                <form id="form1" action="">
+                    <div class="block08__input block08__input_filled block08__input_error">
+                        <label for="input01" class="block08__label1">Введите имя</label>
+                        <input type="text" class="block08__name" id="input01" name="fill_name" value="">
+                        <span class="block08__error">Error message</span>
                     </div>
-                    <div class="block08__input">
-                        <div class="block08__name">
-                            <span>Номер места</span>
-                            <svg class="block08__icon" width=".6rem" height=".4rem">
-                                <use xlink:href="#select_triangle"></use>
-                            </svg>
-                        </div>
+                    <div class="block08__input block08__input_filled block08__input_error">
+                        <label for="input01" class="block08__label1">Введите email</label>
+                        <input type="text" class="block08__name" id="input02" name="fill_email" value="">
+                        <span class="block08__error">Error message</span>
                     </div>
-                    <div class="block08__input">
-                        <label for="input02" class="block08__label1">Напишите свой отзыв</label>
-                        <textarea id="input02" class="block08__comment" name="comment" cols="30" rows="10"
-                            required></textarea>
+                    <div>
+                        <select class="block08__select" name="place" id="select-place">
+                            <option class="modal__option" value="none" disabled selected>Выберите место</option>
+                            <option class="modal__option" value="1">1</option>
+                            <option class="modal__option" value="2">2</option>
+                            <option class="modal__option" value="3">3</option>
+                        </select>
                     </div>
                     <div>
                         <label class="block08__checkbox">
@@ -581,7 +584,7 @@
                     </div>
                     <div>
                         <label>
-                            <button class="block08__button button__font-family" type="submit" name="submit">
+                            <button class="block08__button button__font-family" name="submit">
                                 <span class="block08__submit">
                                     Отправить
                                 </span>
@@ -590,8 +593,7 @@
                     </div>
                 </form>
             </div>
-            <div class="block08__pic">
-            </div>
+            <div class="block08__pic"></div>
         </div>
     </div>
     <div class="block09">
@@ -849,7 +851,7 @@
                 <div class="modal__input3">
                     <select class="modal__select" name="prize" id="choose-prize">
                         <option class="modal__option" value="none" disabled selected>Выберите подарок</option>
-                        <option class="modal__option" value="ticket4Free">Бесплатная 3-я жопа</option>
+                        <option class="modal__option" value="ticket4Free">Бесплатный третий билет</option>
                         <option class="modal__option" value="freePop">Удвоим попкорн</option>
                     </select>
                 </div>
