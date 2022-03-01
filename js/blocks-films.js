@@ -43,7 +43,7 @@ const fetchBlockFilms = async() => {
     const requests = [];
     const filmBlocksMap = new Map();
 
-    let limit = 6;
+    let limit = 5;
 
     films.forEach((film) => {
         if (limit < 1) {

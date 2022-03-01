@@ -1,113 +1,162 @@
-const fillNameField = document.querySelector('#form1 input[name="fill_name"]').parentNode;
-const fillEmailField = document.querySelector('#form1 input[name="fill_email"]').parentNode;
-const selectPlace = document.getElementById('select-place');
-const formSubmit = document.getElementById('form1');
+// const fillNameField = document.querySelector('#form1 input[name="name"]').parentNode;
+// const fillEmailField = document.querySelector('#form1 input[name="email"]').parentNode;
+// const selectPlace = document.getElementById('select-place');
+// const formSubmit = document.getElementById('form1');
 
-const ERROR_CLASSNAME = 'block08__input_error';
-const FOCUSED_CLASSNAME = 'block08__input_filled';
-const SELECTED_CLASSNAME = 'block08__select_selected';
-const SELECTED_ERROR = 'block08__select-error';
+// const ERROR_CLASSNAME = 'block08__input_error';
+// const FOCUSED_CLASSNAME = 'block08__input_filled';
+// const SELECTED_CLASSNAME = 'block08__select_selected';
+// const SELECTED_ERROR = 'block08__select-error';
 
-function initializeFormField(field) {
-    const input = field.getElementsByTagName('input')[0];
-    const fieldError = field.querySelector('.block08__error');
+// function initializeFormField(field) {
+//     const input = field.getElementsByTagName('input')[0];
+//     const fieldError = field.querySelector('.block08__error');
 
-    reset();
+//     reset();
+
+//     function clearError() {
+//         field.classList.remove(ERROR_CLASSNAME);
+//         fieldError.innerText = '';
+//     }
+
+//     input.addEventListener('focus', function () {
+//         field.classList.add(FOCUSED_CLASSNAME);
+//     })
+
+//     input.addEventListener('blur', () => {
+//         if (!input.value) {
+//             field.classList.remove(FOCUSED_CLASSNAME);
+//         }
+//     })
+
+//     input.addEventListener('input', () => {
+//         clearError();
+//     })
+
+//     function reset() {
+//         input.value = '';
+//         field.classList.remove(FOCUSED_CLASSNAME);
+//         clearError();
+//     }
+
+//     return {
+//         addError(errorText) {
+//             field.classList.add(ERROR_CLASSNAME);
+//             fieldError.innerText = errorText;
+//         },
+//         getValue() {
+//             return input.value
+//         },
+//         focus() {
+//             input.focus()
+//         },
+//         reset: reset
+//     }
+// }
+
+// const fillNameFieldUtils = initializeFormField(fillNameField);
+// const fillEmailFieldUtils = initializeFormField(fillEmailField);
+
+// selectPlace.addEventListener('change', () => {
+//     selectPlace.classList.add(SELECTED_CLASSNAME);
+//     selectPlace.classList.remove(SELECTED_ERROR);
+// });
+
+// function handleSubmitForm(event) {
+//     event.preventDefault();
     
-    function clearError() {
-        field.classList.remove(ERROR_CLASSNAME);
-        fieldError.innerText = '';
-    }
+//     const nameValue = fillNameFieldUtils.getValue();
+//     const emailValue = fillEmailFieldUtils.getValue();
 
-    input.addEventListener('focus', function() {
-        field.classList.add(FOCUSED_CLASSNAME);
-    })
+//     if (!nameValue) {
+//         fillNameFieldUtils.addError('Необходимо указать имя');
+//         return;
+//     }
 
-    input.addEventListener('blur', () => {
-        if(!input.value) {
-        field.classList.remove(FOCUSED_CLASSNAME);
-        }
-    })
+//     if (!emailValue) {
+//         fillEmailFieldUtils.addError('Укажите email');
+//         return;
+//     }
 
-    input.addEventListener('input', () => {
-        clearError();
-    })
+//     if (!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
+//         fillEmailFieldUtils.addError('Невалидный email');
+//         return;
+//     }
 
-    function reset() {
-        input.value = '';
-        field.classList.remove(FOCUSED_CLASSNAME);
-        clearError();
-    }
+//     if (selectPlace.value === 'none') {
+//         selectPlace.classList.add(SELECTED_ERROR);
+//         selectPlace.classList.add('block08__error');
+//         return;
+//     }
 
-    return {
-        addError(errorText) {
-            field.classList.add(ERROR_CLASSNAME);
-            fieldError.innerText = errorText;
-        },
-        getValue() {
-            return input.value
-        },
-        focus() {
-            input.focus()
-        },
-        reset: reset
-    }
-}
 
-const fillNameFieldUtils = initializeFormField(fillNameField);
-const fillEmailFieldUtils = initializeFormField(fillEmailField);
+    const data = new FormData(document.getElementById('form1'));
+    const dataToJSON = JSON.stringify(Object.fromEntries(data));
+    const url = 'http://study.xeol.ru/api/new_order';
 
-fillNameFieldUtils.focus();
-
-selectPlace.addEventListener('change', () => {
-    selectPlace.classList.add(SELECTED_CLASSNAME);
-    selectPlace.classList.remove(SELECTED_ERROR);
-});
-
-function handleSubmitForm(event) {
-    event.preventDefault();
-    const nameValue = fillNameFieldUtils.getValue();
-    const emailValue = fillEmailFieldUtils.getValue();
-
-    if(!nameValue) {
-        fillNameFieldUtils.addError('Необходимо указать имя');
-        return;
-    }
-
-    if(!emailValue) {
-        fillEmailFieldUtils.addError('Укажите email');
-        return;
-    }
-
-    if(!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
-        fillEmailFieldUtils.addError('Невалидный email');
-        return;
-    }
-
-    if(selectPlace.value === 'none') {
-        selectPlace.classList.add(SELECTED_ERROR);
-        selectPlace.classList.add('block08__error');
-        return;
-    }
-
-    const data = {
-        name: nameValue,
-        email: emailValue,
-        place: selectPlace.value
-    };
+    $('#form1').on('submit', function(e) {
+        e.preventDefault();
     
-    const url = new URL('https://inno-js.ru/multystub/stc-21-03/feedback');
-    url.search = new URLSearchParams(data).toString();
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: dataToJSON,
+            dataType: 'json',
+            success: function (msg) {
+                console.log(msg)
+            },
+            error: function (msg) {
+                showErrors(msg)
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+        })
 
-    fetch(url.toString())
-    .then(data => data.json())
-    .then((data) => {
-        fillNameFieldUtils.reset();
-        fillEmailFieldUtils.reset();
-        selectPlace.value = 'none';
-        selectPlace.classList.remove(SELECTED_CLASSNAME);
-    });
+    })
+    
+    function showErrors(msg) {
+        $('#form1 input, #form1 select').each(function () {
+            for (let errors in msg.responseJSON.errors) {
+                if (errors == $(this).attr('name')) {
+                    let parent = $(this).closest('.block08__input');
+                    parent.addClass('block08__input_error');
+                    
+                    // // if (!parent.length) {
+                    // //     parent = $(this).closest('.block08__select-wrap');
+                    // //     parent.addClass('block08__select-error');
+                    // // }
+                    // // if (!parent.length) {
+                    // //     parent = $(this).closest('.block08__checkbox');
+                    // //     parent.addClass('block08__select-error');
+                    // }
+                    
+                    for (let error in msg.responseJSON.errors[errors]) {
+                        parent.append('<p class="block08__error">' + msg.responseJSON.errors[errors][error] + '</p>');
+                    }
+                }
+            }
+        })
+    }
 
-}
+    // fetch(url, {
+    //       method: 'POST',
+    //       cache: 'no-cache',
+    //       headers: {
+    //           'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(data),
+    // })
+    // .then((data) => {
+    //     fillNameFieldUtils.reset();
+    //     fillEmailFieldUtils.reset();
+    //     selectPlace.value = 'none';
+    //     selectPlace.classList.remove(SELECTED_CLASSNAME);
+    // });
+// }
+    
 
-formSubmit.addEventListener('submit', handleSubmitForm);
+// formSubmit.addEventListener('submit', handleSubmitForm);
+
+
+

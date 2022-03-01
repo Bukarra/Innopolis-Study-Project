@@ -554,23 +554,25 @@
                 <h3 class="block08__headline">
                     Обратная связь
                 </h3>
-                <form id="form1" action="">
+                <form id="form1">
+                    <input type="hidden" name="api_key" value="2PFtD8jaVTE34Ka72RCQ">
                     <div class="block08__input block08__input_filled block08__input_error">
                         <label for="input01" class="block08__label1">Введите имя</label>
-                        <input type="text" class="block08__name" id="input01" name="fill_name" value="">
+                        <input type="text" class="block08__name" id="input01" name="name" value="">
                         <span class="block08__error">Error message</span>
                     </div>
                     <div class="block08__input block08__input_filled block08__input_error">
                         <label for="input01" class="block08__label1">Введите email</label>
-                        <input type="text" class="block08__name" id="input02" name="fill_email" value="">
+                        <input type="text" class="block08__name" id="input02" name="email" value="">
                         <span class="block08__error">Error message</span>
                     </div>
-                    <div>
+                    <div class="block08__select-wrap">
                         <select class="block08__select" name="place" id="select-place">
                             <option class="modal__option" value="none" disabled selected>Выберите место</option>
                             <option class="modal__option" value="1">1</option>
                             <option class="modal__option" value="2">2</option>
                             <option class="modal__option" value="3">3</option>
+                            <option class="modal__option" value="4">4</option>
                         </select>
                     </div>
                     <div>
@@ -837,7 +839,7 @@
     <div class="popup hidden" id="prize-popup">
         <div class="form-wrapper">
             <button class="close" id="prize-popup__close"></button>
-            <form id="prize-form" action="">
+            <form id="prize-form">
                 <div class="modal__input modal__input1 modal__input_filled modal__input_error">
                     <label for="input1" class="modal__label modal__label1">Введите имя</label>
                     <input type="text" class="modal__name" id="input1" name="name" value="">
@@ -877,7 +879,7 @@
         </div>
     </div>
 
-    <div class="city-wrapper" id="city-popup">
+    <div class="city-wrapper" id="city-popup" style="display: none">
         <label for="#city-input" class="city-input__label">Введите город</label>
         <input type="text" class="city-input__name" id="city-input" value="">
     </div>

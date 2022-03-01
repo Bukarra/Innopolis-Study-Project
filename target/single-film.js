@@ -120,7 +120,6 @@ var fetchFilmMeta = /*#__PURE__*/function () {
 }();
 
 var likeIcon = document.querySelector('.like-icon');
-4;
 var FILM_KEY = "film-".concat(filmId);
 var liked = localStorage.getItem(FILM_KEY);
 

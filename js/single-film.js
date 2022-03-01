@@ -44,7 +44,7 @@ const fetchFilmMeta = async () => {
     }
 }
 
-const likeIcon = document.querySelector('.like-icon');4
+const likeIcon = document.querySelector('.like-icon');
 const FILM_KEY = `film-${filmId}`;
 const liked = localStorage.getItem(FILM_KEY);
 if (liked !== null) {
