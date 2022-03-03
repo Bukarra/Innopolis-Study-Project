@@ -915,7 +915,6 @@ input:checked+svg {
     border: 0;
     width: 17.4rem;
     padding-left: .65rem;
-    margin-bottom: 1.8rem;
 }
 
 .block08__select:hover {
@@ -931,6 +930,9 @@ input:checked+svg {
 .block08__select-error {
     box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
     background: #FFF;
+    border-radius: .2rem;
+    height: 1.8rem;
+    max-width: 17.4rem;
 }
 
 .block08__icon {
@@ -939,18 +941,20 @@ input:checked+svg {
     vertical-align: middle;
 }
 
-.block08__comment {
-    font-size: .8rem;
-    padding: .4rem .8rem;
-    background: #DEDEDE;
-    width: 100%;
-    border: 0;
-    border-radius: .2rem;
-    max-height: 5rem;
+.block08__checkbox-wrap {
+    margin-top: 1.8rem;
 }
 
 .block08__checkbox {
     cursor: pointer;
+}
+
+.block08__checkbox-error {
+    box-shadow: 0 0 0 .2rem rgba(224, 44, 12, 0.932);
+    background: #FFF;
+    border-radius: .2rem;
+    max-width: 17.4rem;
+    height: 1.2rem;
 }
 
 .block08__checkbox input {
@@ -1220,4 +1224,23 @@ input:checked+.block08__tick {
     font-weight: normal;
     line-height: 1.26;
     color: #333333;
+}
+
+.query-popup {
+    background-color: #FFF;
+    max-width: 25rem;
+    min-height: 5rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.ajax-loader {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, .5);
 }

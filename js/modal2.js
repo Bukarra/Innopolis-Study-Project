@@ -1,161 +1,105 @@
-const fillNameField = document.querySelector('#form1 input[name="name"]').parentNode;
-const fillEmailField = document.querySelector('#form1 input[name="email"]').parentNode;
-const selectPlace = document.getElementById('select-place');
-const formSubmit = document.getElementById('form1');
+$('#form1 input, #form1 select').on('focus', function() {
+    let parent = $(this).closest('.block08__input');
+    parent.addClass('block08__input_filled');
+    parent.removeClass('block08__input_error');
+    parent.find('.block08__error').html('');
 
-const ERROR_CLASSNAME = 'block08__input_error';
-const FOCUSED_CLASSNAME = 'block08__input_filled';
-const SELECTED_CLASSNAME = 'block08__select_selected';
-const SELECTED_ERROR = 'block08__select-error';
+    if (!parent.length) {
+        parent = $(this).closest('.block08__select-wrap');
+        parent.removeClass('block08__select-error');
+        parent.find('.block08__error').html('');
+    }
+    if (!parent.length) {
+        parent = $(this).closest('.block08__checkbox-wrap');
+        parent.removeClass('block08__checkbox-error');
+        parent.find('.block08__error').html('');
+    }
+})
 
-function initializeFormField(field) {
-    const input = field.getElementsByTagName('input')[0];
-    const fieldError = field.querySelector('.block08__error');
+$('#select-place').on('change', function () {
+    $(this).addClass('block08__select_selected');
+})
 
-    reset();
-
-    function clearError() {
-        field.classList.remove(ERROR_CLASSNAME);
-        fieldError.innerText = '';
+$('#form1 input, #form1 select').on('blur', function() {
+    let parent = $(this).closest('.block08__input');
+    if(!$(this).val()) {
+        parent.removeClass('block08__input_filled');
     }
 
-    input.addEventListener('focus', function () {
-        field.classList.add(FOCUSED_CLASSNAME);
-    })
-
-    input.addEventListener('blur', () => {
-        if (!input.value) {
-            field.classList.remove(FOCUSED_CLASSNAME);
+    if (!parent.length) {
+        parent = $(this).closest('.block08__select-wrap');
+        if(!$(this).val()) {
+            parent.removeClass('block08__select_selected');
         }
-    })
-
-    input.addEventListener('input', () => {
-        clearError();
-    })
-
-    function reset() {
-        input.value = '';
-        field.classList.remove(FOCUSED_CLASSNAME);
-        clearError();
     }
+})
 
-    return {
-        addError(errorText) {
-            field.classList.add(ERROR_CLASSNAME);
-            fieldError.innerText = errorText;
-        },
-        getValue() {
-            return input.value
-        },
-        focus() {
-            input.focus()
-        },
-        reset: reset
-    }
-}
+const url = 'http://study.xeol.ru/api/new_order';
 
-const fillNameFieldUtils = initializeFormField(fillNameField);
-const fillEmailFieldUtils = initializeFormField(fillEmailField);
-
-selectPlace.addEventListener('change', () => {
-    selectPlace.classList.add(SELECTED_CLASSNAME);
-    selectPlace.classList.remove(SELECTED_ERROR);
-});
-
-function handleSubmitForm(event) {
-    event.preventDefault();
-    
-    const nameValue = fillNameFieldUtils.getValue();
-    const emailValue = fillEmailFieldUtils.getValue();
-
-    if (!nameValue) {
-        fillNameFieldUtils.addError('Необходимо указать имя');
-        return;
-    }
-
-    if (!emailValue) {
-        fillEmailFieldUtils.addError('Укажите email');
-        return;
-    }
-
-    if (!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
-        fillEmailFieldUtils.addError('Невалидный email');
-        return;
-    }
-
-    if (selectPlace.value === 'none') {
-        selectPlace.classList.add(SELECTED_ERROR);
-        selectPlace.classList.add('block08__error');
-        return;
-    }
-
+$('#form1').on('submit', function(e) {
+    e.preventDefault();
+    $('.ajax-loader').show();
 
     const data = new FormData(document.getElementById('form1'));
-    const url = 'http://study.xeol.ru/api/new_order';
+        
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        dataType: 'json',
+        success: function (msg) {
+            $('.ajax-loader').hide();
 
-    // $('#form1').on('submit', function(e) {
-    //     e.preventDefault();
+            $.fancybox.open({
+                src: '#query-popup',
+                type: 'inline',
+            });
+
+            $('.query-popup__success-message').html(msg.success);
+        },
+        error: function (msg) {
+            showErrors(msg)
+        },
+        cache: false,
+        contentType: false,
+        processData: false,
+    })
+
+    $('.block08__name').val('');
+    $('.block08__input').removeClass('block08__input_filled');
+    $('#select-place').val('none');
+    $('.block08__select').removeClass('block08__select_selected');
+    $('.block08__checkbox input').val('');
+
+})
     
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: data,
-            dataType: 'json',
-            success: function (msg) {
-                console.log(msg)
-            },
-            error: function (msg) {
-                showErrors(msg)
-            },
-            cache: false,
-            contentType: false,
-            processData: false,
-        })
+function showErrors(msg) {
+    $('#form1 input, #form1 select').each(function () {
+        for (let errors in msg.responseJSON.errors) {
+            
+            if (errors == $(this).attr('name')) {
+                
+                let parent = $(this).closest('.block08__input');
+                parent.addClass('block08__input_error');
+                
+                if (!parent.length) {
+                    parent = $(this).closest('.block08__select-wrap');
+                    parent.addClass('block08__select-error');
+                }
 
-    // })
-    
-    // function showErrors(msg) {
-    //     $('#form1 input, #form1 select').each(function () {
-    //         for (let errors in msg.responseJSON.errors) {
-    //             if (errors == $(this).attr('name')) {
-    //                 let parent = $(this).closest('.block08__input');
-    //                 parent.addClass('block08__input_error');
-                    
-    //                 // // if (!parent.length) {
-    //                 // //     parent = $(this).closest('.block08__select-wrap');
-    //                 // //     parent.addClass('block08__select-error');
-    //                 // // }
-    //                 // // if (!parent.length) {
-    //                 // //     parent = $(this).closest('.block08__checkbox');
-    //                 // //     parent.addClass('block08__select-error');
-    //                 // }
-                    
-    //                 for (let error in msg.responseJSON.errors[errors]) {
-    //                     parent.append('<p class="block08__error">' + msg.responseJSON.errors[errors][error] + '</p>');
-    //                 }
-    //             }
-    //         }
-    //     })
-    // }
-
-    // fetch(url, {
-    //       method: 'POST',
-    //       cache: 'no-cache',
-    //       headers: {
-    //           'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(data),
-    // })
-    // .then((data) => {
-    //     fillNameFieldUtils.reset();
-    //     fillEmailFieldUtils.reset();
-    //     selectPlace.value = 'none';
-    //     selectPlace.classList.remove(SELECTED_CLASSNAME);
-    // });
+                if (!parent.length) {
+                    parent = $(this).closest('.block08__checkbox-wrap');
+                    parent.addClass('block08__checkbox-error');
+                }
+                
+                for (let error in msg.responseJSON.errors[errors]) {
+                    parent.append('<p class="block08__error">' + msg.responseJSON.errors[errors][error] + '</p>');
+                }
+            }
+        }
+    })
 }
-    
 
-formSubmit.addEventListener('submit', handleSubmitForm);
 
 
 

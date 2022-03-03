@@ -30,7 +30,6 @@
     <script defer src="target/city.js"></script>
     <script defer src="target/modal2.js"></script>
 
-
     <title>Учебный проект сайта</title>
 </head>
 
@@ -556,15 +555,13 @@
                 </h3>
                 <form id="form1">
                     <input type="hidden" name="api_key" value="2PFtD8jaVTE34Ka72RCQ">
-                    <div class="block08__input block08__input_filled block08__input_error">
+                    <div class="block08__input">
                         <label for="input01" class="block08__label1">Введите имя</label>
                         <input type="text" class="block08__name" id="input01" name="name" value="">
-                        <span class="block08__error">Error message</span>
                     </div>
-                    <div class="block08__input block08__input_filled block08__input_error">
+                    <div class="block08__input">
                         <label for="input01" class="block08__label1">Введите email</label>
                         <input type="text" class="block08__name" id="input02" name="email" value="">
-                        <span class="block08__error">Error message</span>
                     </div>
                     <div class="block08__select-wrap">
                         <select class="block08__select" name="place" id="select-place">
@@ -573,9 +570,39 @@
                             <option class="modal__option" value="2">2</option>
                             <option class="modal__option" value="3">3</option>
                             <option class="modal__option" value="4">4</option>
+                            <option class="modal__option" value="5">5</option>
+                            <option class="modal__option" value="6">5</option>
+                            <option class="modal__option" value="7">7</option>
+                            <option class="modal__option" value="8">8</option>
+                            <option class="modal__option" value="9">9</option>
+                            <option class="modal__option" value="10">10</option>
+                            <option class="modal__option" value="11">11</option>
+                            <option class="modal__option" value="12">12</option>
+                            <option class="modal__option" value="13">13</option>
+                            <option class="modal__option" value="14">14</option>
+                            <option class="modal__option" value="15">15</option>
+                            <option class="modal__option" value="16">16</option>
+                            <option class="modal__option" value="17">17</option>
+                            <option class="modal__option" value="18">18</option>
+                            <option class="modal__option" value="19">19</option>
+                            <option class="modal__option" value="20">20</option>
+                            <option class="modal__option" value="21">21</option>
+                            <option class="modal__option" value="22">22</option>
+                            <option class="modal__option" value="23">23</option>
+                            <option class="modal__option" value="24">24</option>
+                            <option class="modal__option" value="25">25</option>
+                            <option class="modal__option" value="26">26</option>
+                            <option class="modal__option" value="27">27</option>
+                            <option class="modal__option" value="28">28</option>
+                            <option class="modal__option" value="29">29</option>
+                            <option class="modal__option" value="30">30</option>
+                            <option class="modal__option" value="31">31</option>
+                            <option class="modal__option" value="32">32</option>
+                            <option class="modal__option" value="33">33</option>
+                            <option class="modal__option" value="34">34</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="block08__checkbox-wrap">
                         <label class="block08__checkbox">
                             <input type="checkbox" name="agree">
                             <span class="block08__tick"></span>
@@ -879,10 +906,17 @@
         </div>
     </div>
 
-    <div class="city-wrapper" id="city-popup" style="display: none">
+    <div class="city-wrapper" id="city-popup">
         <label for="#city-input" class="city-input__label">Введите город</label>
         <input type="text" class="city-input__name" id="city-input" value="">
     </div>
+
+    <div class="query-popup" style="display: none;">
+        <h2>Успешно сохранено!</h2>
+        <p class="query-popup__success-message"></p>
+    </div>
+
+    <div class="ajax-loader"></div>
 
 </body>
 
