@@ -1,4 +1,5 @@
 import 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+// import '../libs/fancybox/fancybox.umd.js';
 import '../libs/owl/owl.carousel.min.js';
 import '../libs/polyfill/polyfill.min.js';
 

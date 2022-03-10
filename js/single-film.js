@@ -1,3 +1,8 @@
+import 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+import '../libs/polyfill/polyfill.min.js';
+
+import { filmDetailsRequest } from '../js/__data__/api/kinopoiskapiunofficial.js';
+
 const searchParams = new URLSearchParams(location.search);
 const likes = document.getElementById('sf-likes');
 const stars = document.querySelectorAll('.rating-star');
@@ -17,10 +22,10 @@ const fetchKinopoiskFilmData = async () => {
     description.textContent = filmInfo.description;
     posterImage.src = filmInfo.posterUrl;
     premiereYear.textContent = filmInfo.year;
-}
+};
 
 const fetchFilmMeta = async () => {
-    const answer = await fetch (`https://inno-js.ru/multystub/stc-21-03/film/${filmId}`);
+    const answer = await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}`);
     const { body } = await answer.json();
 
     const views = document.getElementById('sf-views');
@@ -36,13 +41,13 @@ const fetchFilmMeta = async () => {
         ratingNumber.textContent = Math.floor(rating * 10) / 10;
     }
 
-    for (let i = 0; i < stars.length; i++) {      
-        if(i >= intRating) break;
+    for (let i = 0; i < stars.length; i++) {
+        if (i >= intRating) break;
 
         const star = stars[i];
         star.classList.add('star_selected');
     }
-}
+};
 
 const likeIcon = document.querySelector('.like-icon');
 const FILM_KEY = `film-${filmId}`;
@@ -51,22 +56,19 @@ if (liked !== null) {
     likeIcon.classList.add('like-icon_liked');
 }
 likeIcon.addEventListener('click', () => {
-    if(!likeIcon.classList.contains('like-icon_liked')) {
+    if (!likeIcon.classList.contains('like-icon_liked')) {
         localStorage.setItem(FILM_KEY, true);
         const likesCount = parseInt(likes.textContent, 10) + 1;
 
         likes.innerText = `${likesCount} Likes`;
         likeIcon.classList.add('like-icon_liked');
 
-        fetch(
-            `https://inno-js.ru/multystub/stc-21-03/film/${filmId}/like`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }
-        )
+        fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/like`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
     }
 });
 
@@ -85,18 +87,17 @@ likeIcon.addEventListener('click', () => {
 //     })
 // }
 
-$('.movie-page__ratestars').on('click', '.rating-star', async function() {
-    await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ rating: +this.dataset.value })
-            });
+$('.movie-page__ratestars').on('click', '.rating-star', async function () {
+    await fetch(`https://inno-js.ru/multystub/stc-21-03/film/${filmId}/rating`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ rating: +this.dataset.value }),
+    });
 
     fetchFilmMeta();
-})
+});
 
 fetchKinopoiskFilmData();
 fetchFilmMeta();
