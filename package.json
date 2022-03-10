@@ -1,0 +1,30 @@
+{
+  "name": "cinema-project",
+  "version": "1.0.0",
+  "description": "Учебный проект",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "start": "babel js -d target --watch --source-maps",
+    "build": "npm run clean && babel js -d target --source-maps",
+    "clean": "rimraf target/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bukarra/Cinema.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bukarra/Cinema/issues"
+  },
+  "homepage": "https://github.com/Bukarra/Cinema#readme"
+}

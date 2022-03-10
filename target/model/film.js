@@ -1,5 +1,12 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _time = require("../utils/time.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -33,7 +40,7 @@ var Film = /*#__PURE__*/function () {
     _classPrivateMethodInitSpec(this, _getId);
 
     this.data = filmData;
-    this.start = "".concat(toHour(getRandomToMax(14) + 9), ":").concat(toMinutes(getRandomToMax(6)));
+    this.start = "".concat((0, _time.toHour)((0, _time.getRandomToMax)(14) + 9), ":").concat((0, _time.toMinutes)((0, _time.getRandomToMax)(6)));
     this.id = filmData.id || filmData.title.replaceAll('', '-');
   }
 
@@ -69,4 +76,7 @@ function _getGenre2() {
     return g.name;
   }).join(', ');
 }
+
+var _default = Film;
+exports["default"] = _default;
 //# sourceMappingURL=film.js.map

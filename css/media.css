@@ -4,7 +4,7 @@
     }
 
     .paragraph-font {
-        font-size: .4rem;
+        font-size: 0.4rem;
     }
 
     .headline-font {
@@ -30,7 +30,7 @@
     .block01__btn {
         display: block;
         margin-left: 25.8rem;
-        margin-top: .6rem;
+        margin-top: 0.6rem;
     }
 
     .block01__menu-wrap {
@@ -41,18 +41,18 @@
         right: 0;
         bottom: 0;
         z-index: 1000;
-        transition: .2s;
+        transition: 0.2s;
     }
 
-    .block01__btn:hover+.block01__menu-wrap,
+    .block01__btn:hover + .block01__menu-wrap,
     .block01__menu-wrap_opened {
         transform: translateX(0);
     }
 
     .link-white,
     .block01__address {
-        color: #9B9B9B;
-        font-size: .8rem;
+        color: #9b9b9b;
+        font-size: 0.8rem;
     }
 
     .block01__address {
@@ -60,8 +60,8 @@
     }
 
     .link-menu {
-        color: #4C4D4F;
-        font-size: .8rem;
+        color: #4c4d4f;
+        font-size: 0.8rem;
     }
 
     .block01__col2 {
@@ -89,13 +89,13 @@
     .block01__button {
         width: 8rem;
         height: 1.2rem;
-        box-shadow: 0px 0px 5px #A3CC40;
-        border: #A3CC40;
-        color: #A3CC40;
+        box-shadow: 0px 0px 5px #a3cc40;
+        border: #a3cc40;
+        color: #a3cc40;
     }
 
     .block01__button svg {
-        fill: #A3CC40;
+        fill: #a3cc40;
         padding-right: 0.4rem;
     }
 
@@ -105,11 +105,11 @@
     }
 
     .block01__dropdown-trigger span {
-        color: #A3CC40;
+        color: #a3cc40;
     }
 
     .block01__dropdown-trigger svg {
-        fill: #A3CC40;
+        fill: #a3cc40;
     }
 
     .block02__welcome {
@@ -125,7 +125,7 @@
 
     .block02__headline {
         margin: 1.6rem 2.2rem 3rem;
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
 
     .block02__content {
@@ -237,7 +237,7 @@
     }
 
     .block08__form {
-        margin-right: .8rem;
+        margin-right: 0.8rem;
     }
 
     .block09 {

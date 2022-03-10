@@ -1,5 +1,7 @@
 "use strict";
 
+var _kinopoiskapiunofficial = require("../__data__/api/kinopoiskapiunofficial.js");
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -61,7 +63,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return topfilmsRequest();
+            return (0, _kinopoiskapiunofficial.topfilmsRequest)();
 
           case 2:
             result = _context2.sent;
@@ -95,7 +97,7 @@ var fetchBlockFilms = /*#__PURE__*/function () {
                       switch (_context.prev = _context.next) {
                         case 0:
                           _context.next = 2;
-                          return filmDetailsRequest(film.filmId);
+                          return (0, _kinopoiskapiunofficial.filmDetailsRequest)(film.filmId);
 
                         case 2:
                           detailResult = _context.sent;

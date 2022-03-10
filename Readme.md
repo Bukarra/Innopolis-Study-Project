@@ -4,30 +4,16 @@
 
 ## Инструкция по установке Babel
 
-Запустить команды
+Запустить команду
 
 ```js
-npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/polyfill
+npm install
 ```
 
-Запустить Babel
+## Запуск
+
+Запустить команду
 
 ```js
-npx babel js -d target --watch --source-maps
-```
-
-## Инструкция по загрузке изменений проекта на GitHub
-
-Запустить команды
-
-```js
-git add .
-```
-
-```js
-git commit -m "Готова структура index.html"
-```
-
-```js
-git push origin main
+npm start
 ```

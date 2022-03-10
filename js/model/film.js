@@ -1,3 +1,5 @@
+import { getRandomToMax, toHour, toMinutes } from '../utils/time.js';
+
 class Film {
     constructor(filmData) {
         this.data = filmData;
@@ -22,11 +24,9 @@ class Film {
     }
 
     #getGenre() {
-        return this.data.genre
-            .map(g => g.name)
-            .join(', ');
+        return this.data.genre.map((g) => g.name).join(', ');
     }
-    
+
     renderFilmTableItem() {
         return `
         <tr>
@@ -42,6 +42,8 @@ class Film {
             <td>${this.#getTitle()}</td>
             <td>${this.#getGenre()}</td>
         </tr>
-        `
+        `;
     }
 }
+
+export default Film;
