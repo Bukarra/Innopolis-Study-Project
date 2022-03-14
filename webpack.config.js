@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 module.exports = {
     entry: './src/main.js',
@@ -11,10 +11,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpe?g|svg|ttf)$/,
-                use: [{ loader: 'file-loader' }],
-            },
-            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
@@ -22,12 +18,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'public/index.html'),
+            template: path.resolve(__dirname, 'src', 'public', 'index.html'),
         }),
-        new webpack.DefinePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-        }),
+        // new webpack.DefinePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery',
+        //     'window.jQuery': 'jquery',
+        // }),
     ],
 };
