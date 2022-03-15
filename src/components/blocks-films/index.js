@@ -1,4 +1,6 @@
-import { filmDetailsRequest, topfilmsRequest } from '../__data__/api/kinopoiskapiunofficial.js';
+import './style.css';
+
+import { filmDetailsRequest, topfilmsRequest } from '../../__data__/api/kinopoiskapiunofficial';
 
 const blockFilmsWrapper = document.getElementById('block05-films-wrapper');
 

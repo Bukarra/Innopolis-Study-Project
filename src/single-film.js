@@ -1,4 +1,4 @@
-import 'jquery';
+// import 'jquery';
 import './libs/polyfill.min';
 
 import { filmDetailsRequest } from './__data__/api/kinopoiskapiunofficial.js';

@@ -366,9 +366,9 @@ body {
     justify-content: space-between;
 }
 
-.block02__pic1 {
+/* .block02__pic1 {
     background-image: url('../assets/img/whyus1_land.jpg');
-}
+} */
 
 .block02__pic2 {
     background-image: url('../assets/img/whyus2_land.jpg');
@@ -630,20 +630,6 @@ input:checked + svg {
 
 .block05__movie:hover .block05__description {
     transform: translateY(0);
-}
-
-.block05__shadow {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    background: rgba(22, 22, 22, 0.8);
-    transition: 0.2s;
-}
-
-.block05__movie:hover .block05__shadow {
-    background: rgba(22, 22, 22, 0);
 }
 
 /** Блок 6 */

@@ -1,0 +1,13 @@
+.block05__shadow {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(22, 22, 22, 0.8);
+    transition: 0.2s;
+}
+
+.block05__movie:hover .block05__shadow {
+    background: rgba(22, 22, 22, 0);
+}

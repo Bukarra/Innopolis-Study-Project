@@ -3,13 +3,21 @@ const path = require('path');
 // const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        main: './src/main.js',
+        single: './src/single-film.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name]-bundle.js',
+        assetModuleFilename: 'assets/[hash][ext][query]',
     },
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|svg|ttf)$/i,
+                type: 'asset/resource',
+            },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
@@ -19,6 +27,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'public', 'index.html'),
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src', 'public', 'single.html'),
+            filename: 'single/index.html',
+            chunks: ['single'],
         }),
         // new webpack.DefinePlugin({
         //     $: 'jquery',

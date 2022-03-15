@@ -6,11 +6,11 @@ import './css/modal.css';
 // import 'jquery';
 // // import '../libs/fancybox/fancybox.umd.js';
 // import './libs/owl/owl.carousel.min';
-import './libs/polyfill.min';
+// import './libs/polyfill.min';
 
 import { createTable } from './components/films-table';
 import { filmsData, filmsData2 as popularFilms } from './__data__/mocks';
-import './components/blocks-films';
+import './components/blocks-films/index';
 import './prize';
 // import './city';
 // import './modal2';
