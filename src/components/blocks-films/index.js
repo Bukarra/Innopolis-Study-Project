@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 
 import { filmDetailsRequest, topfilmsRequest } from '../../__data__/api/kinopoiskapiunofficial';
 
