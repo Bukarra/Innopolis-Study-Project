@@ -6,6 +6,7 @@
   "dependencies": {
     "file-loader": "^6.2.0",
     "jquery": "^3.6.0",
+    "owl.carousel": "^2.3.4",
     "ref-loader": "^1.0.3",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
@@ -16,6 +17,8 @@
     "@babel/core": "^7.17.5",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "rimraf": "^3.0.2",
@@ -25,9 +28,8 @@
   },
   "scripts": {
     "start": "webpack serve --mode=development",
-    "build": "webpack --mode=development",
-    "build:prod": "webpack --mode=production",
-    "clean": "rimraf target/*"
+    "build": "npm run clean && webpack --mode=production",
+    "clean": "rimraf dist/*"
   },
   "repository": {
     "type": "git",

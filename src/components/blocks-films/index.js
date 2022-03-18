@@ -1,4 +1,4 @@
-import './style.scss';
+import style from './style.scss';
 
 import { filmDetailsRequest, topfilmsRequest } from '../../__data__/api/kinopoiskapiunofficial';
 
@@ -10,28 +10,28 @@ const blockFilmsWrapper = document.getElementById('block05-films-wrapper');
 
 function renderFilmBlock(posterUrl, filmName, id) {
     const wrapper = document.createElement('div');
-    wrapper.classList.add('block05__movie');
+    wrapper.classList.add(style.movie);
 
     const link = document.createElement('a');
     link.href = `/single/?id=${id}`;
 
     const img = document.createElement('img');
-    img.classList.add('block05__pic');
+    img.classList.add(style.pic);
     img.src = posterUrl;
     img.alt = 'Изображение постера';
 
     const shadow = document.createElement('div');
-    shadow.classList.add('block05__shadow');
+    shadow.classList.add(style.shadow);
 
     const descWrapper = document.createElement('div');
-    descWrapper.classList.add('block05__description');
+    descWrapper.classList.add(style.description);
 
     const title = document.createElement('p');
-    title.classList.add('block05__text1');
+    title.classList.add(style.header);
     title.textContent = filmName;
 
     const desc = document.createElement('p');
-    desc.classList.add('block05__text2', 'paragraph-font');
+    desc.classList.add(style.innerTextContent);
 
     descWrapper.append(title, desc);
     link.append(img, shadow, descWrapper);

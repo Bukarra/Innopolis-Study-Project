@@ -1,5 +1,8 @@
-// import 'jquery';
-import './libs/polyfill.min';
+import './css/reset.css';
+import './css/main.css';
+import './css/movie-page.css';
+
+import '@babel/polyfill';
 
 import { filmDetailsRequest } from './__data__/api/kinopoiskapiunofficial.js';
 

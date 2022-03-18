@@ -366,26 +366,6 @@ body {
     justify-content: space-between;
 }
 
-/* .block02__pic1 {
-    background-image: url('../assets/img/whyus1_land.jpg');
-} */
-
-.block02__pic2 {
-    background-image: url('../assets/img/whyus2_land.jpg');
-}
-.block02__pic3 {
-    background-image: url('../assets/img/whyus3_land.jpg');
-}
-.block02__pic4 {
-    background-image: url('../assets/img/whyus4_land.jpg');
-}
-.block02__pic5 {
-    background-image: url('../assets/img/whyus5_land.jpg');
-}
-.block02__pic6 {
-    background-image: url('../assets/img/whyus6_land.jpg');
-}
-
 /** Блок 3 */
 
 .block03 {
@@ -506,7 +486,6 @@ input:checked + svg {
     z-index: 1;
     left: 6.8rem;
     bottom: 18rem;
-    background-image: url('../assets/img/gift_land.jpg');
 }
 
 .block04__gift-wrap {
@@ -591,47 +570,6 @@ input:checked + svg {
     height: 42.6rem;
 }
 
-.block05__movie {
-    position: relative;
-    cursor: pointer;
-}
-
-.block05__pic {
-    width: 14.2rem;
-    height: 14.2rem;
-}
-
-.block05__text1 {
-    font-weight: 600;
-    font-size: 1.44rem;
-    line-height: 1.31;
-    color: #fff;
-    margin-bottom: 0.6rem;
-}
-
-.block05__text2 {
-    color: #fff;
-    width: 12rem;
-}
-
-.block05__description {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    padding: 1rem 1.2rem 0;
-    background: rgba(144, 210, 61, 0.4);
-    transform: translateY(100%);
-    transition: 0.2s;
-    transition-delay: 0.4s;
-    box-sizing: border-box;
-}
-
-.block05__movie:hover .block05__description {
-    transform: translateY(0);
-}
-
 /** Блок 6 */
 .block06 {
     max-width: 56.2rem;
@@ -668,18 +606,6 @@ input:checked + svg {
 
 .block06__pic {
     height: 16.4rem;
-}
-
-.block06__pic1 {
-    background-image: url('../assets/img/extras1_land.jpg');
-}
-
-.block06__pic2 {
-    background-image: url('../assets/img/extras2_land.jpg');
-}
-
-.block06__pic3 {
-    background-image: url('../assets/img/extras3_land.jpg');
 }
 
 .block06__text {
@@ -772,18 +698,6 @@ input:checked + svg {
     width: 10.4rem;
     height: 7.6rem;
     border-radius: 0.4rem 0.4rem 0 0;
-}
-
-.block07_pic1 {
-    background-image: url('../assets/img/feedback1_land.jpg');
-}
-
-.block07_pic2 {
-    background-image: url('../assets/img/feedback2_land.jpg');
-}
-
-.block07_pic3 {
-    background-image: url('../assets/img/feedback3_land.jpg');
 }
 
 .block07__description {

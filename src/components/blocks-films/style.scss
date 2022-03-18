@@ -1,15 +1,60 @@
-.block05__shadow {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    background: rgba(22, 22, 22, 0.8);
-    transition: 0.2s;
+@import '../../__data__/variables.scss';
 
-    .block05__movie:hover & {
+.movie {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    .pic {
+        width: 14.2rem;
+        height: 14.2rem;
+    }
+
+    .shadow {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        background: rgba(22, 22, 22, 0.8);
+        transition: 0.2s;
+    }
+
+    &:hover .shadow {
         background: rgba(22, 22, 22, 0);
     }
+    
+    .description {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        padding: 1rem 1.2rem 0;
+        background: $greenBg;
+        transform: translateY(100%);
+        transition: 0.2s;
+        transition-delay: 0.4s;
+        box-sizing: border-box;
+    }
+
+    &:hover .description {
+        transform: translateY(0);
+    }
+
+    .header {
+        font-weight: 600;
+        font-size: 1.44rem;
+        line-height: 1.31;
+        color: #fff;
+        margin-bottom: 0.6rem;
+    }
+
+    .inner-text-content {
+        color: #fff;
+        width: 12rem;
+        font-weight: normal;
+        font-size: 0.54rem;
+        line-height: 1.26;
+    }
 }
-
-

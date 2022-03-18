@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
-// const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -15,6 +15,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+            {
                 test: /\.(png|jpe?g|svg|ttf)$/i,
                 type: 'asset/resource',
             },
@@ -24,11 +31,27 @@ module.exports = {
             },
             {
                 test: /\.scss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                                localIdentContext: path.resolve(__dirname, 'src'),
+                                exportLocalsConvention: 'camelCase',
+                            },
+                        },
+                    },
+                    'sass-loader',
+                ],
             },
         ],
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [{ from: 'src/assets/img', to: 'img' }],
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'public', 'index.html'),
             chunks: ['main'],
@@ -38,10 +61,5 @@ module.exports = {
             filename: 'single/index.html',
             chunks: ['single'],
         }),
-        // new webpack.DefinePlugin({
-        //     $: 'jquery',
-        //     jQuery: 'jquery',
-        //     'window.jQuery': 'jquery',
-        // }),
     ],
 };
