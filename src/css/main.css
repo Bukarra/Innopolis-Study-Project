@@ -119,7 +119,7 @@ body {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    min-height: calc(100vh + 8.4rem);
+    min-height: 100vh;
 }
 
 .block01::after {
@@ -135,49 +135,55 @@ body {
 .container .block01__inner {
     padding-top: 2.14rem;
     display: flex;
-    flex-direction: row;
+    align-items: flex-end;
 }
 
 .block01__col1 {
-    margin-right: 2.24rem;
-    padding-top: 0.24rem;
-}
-
-.block01__row1,
-.block01__row2 {
-    display: flex;
-    flex-direction: row;
+    flex: 0 1 10rem;
 }
 
 .block01__row1 {
-    padding-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
-.block01__address {
+.block01__row1 {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.block01__address a {
     font-size: 0.6rem;
     font-weight: 500;
     line-height: 1.32;
     color: #fff;
-    margin-top: 0.32rem;
+    transition: 0.2s;
+    text-decoration: none;
 }
 
-.block01__address a {
-    text-decoration: none;
+.block01__address span {
+    font-size: 0.6rem;
+    font-weight: 500;
+    line-height: 1.32;
     color: #fff;
 }
 
-.block01__call {
-    margin-right: 5.3rem;
+.block01__row2 {
+    display: flex;
+    gap: 3.4rem;
 }
 
 .block01__button {
-    height: 1rem;
     background-color: #fff;
     border: 2px solid #ededed;
     border-radius: 0.2rem;
     font-size: 0.6rem;
     font-weight: 500;
     line-height: 1.32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.1rem 0.4rem;
 }
 
 .block01__button:hover {
@@ -187,18 +193,16 @@ body {
 
 .block01__button svg {
     fill: #333333;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 3px;
-    margin-right: 3px;
 }
 
 .block01__button:hover svg {
     fill: #fff;
 }
 
-.block01__row1_margin {
-    margin-right: 2.74rem;
+.block01__lang-wrapper {
+    position: absolute;
+    right: 1rem;
+    top: 2.14rem;
 }
 
 .block01__lang {
@@ -271,10 +275,6 @@ body {
     text-transform: uppercase;
 }
 
-.block01__row2_margin {
-    margin-right: 3.6rem;
-}
-
 .block01__headline {
     max-width: 37.4rem;
     margin: 0 auto;
@@ -306,8 +306,8 @@ body {
 /** Блок 2 */
 .block02 {
     max-width: 56.2rem;
-    height: 50rem;
     margin: 0 auto;
+    padding-bottom: 6.5rem;
 }
 
 .block02__inner {
@@ -325,7 +325,6 @@ body {
     max-width: 21.4rem;
     right: 0;
     top: -8.74rem;
-    box-sizing: border-box;
 }
 
 .block02__welcome-header {
@@ -357,21 +356,25 @@ body {
 }
 
 .block02__benefit {
+    flex: 0 0 33.33%;
     margin-bottom: 2.4rem;
+    max-width: 12.24rem;
     display: flex;
     flex-direction: column;
-    width: 12.24rem;
-    height: 16rem;
-    align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
+}
+
+.block02__benefit img {
+    max-width: 100%;
+    height: auto;
 }
 
 /** Блок 3 */
 
 .block03 {
     max-width: 56.2rem;
-    height: 24.4rem;
     margin: 0 auto;
+    padding-bottom: 1.5rem;
 }
 
 .block03__inner {
@@ -449,19 +452,17 @@ input:checked + svg {
 
 /** Блок 4 */
 .block04 {
-    background: url('../assets/img/block04_background.jpg') no-repeat center / cover, teal;
+    background: url('../assets/img/block04_background.jpg') no-repeat center / cover;
     max-width: 56.2rem;
-    height: 32rem;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    padding-top: 0.4rem;
 }
 
 .block04::before {
     content: '';
     display: block;
-    border-bottom: 8.24rem solid transparent;
+    border-bottom: 6rem solid transparent;
     border-left: 100vw solid #fff;
     position: absolute;
     top: 0;
@@ -471,34 +472,34 @@ input:checked + svg {
 .block04::after {
     content: '';
     display: block;
-    border-top: 6.8rem solid transparent;
+    border-top: 6rem solid transparent;
     border-right: 100vw solid #fff;
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-.block04__gift {
-    height: 14rem;
-    width: 14rem;
-    border-radius: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 6.8rem;
-    bottom: 18rem;
+.block04__container {
+    max-width: 42.6rem;
+    margin: 0 auto;
+    position: relative;
 }
 
-.block04__gift-wrap {
-    width: 18rem;
-    margin: 0 auto;
-    padding-bottom: 2.4rem;
+.block04__gift {
+    width: 14rem;
+    height: auto;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0.5rem 0.5rem 0.5rem #000;
 }
 
 .block04__text {
     width: 28rem;
     text-align: right;
-    margin-left: 21.4rem;
-    margin-top: 5.6rem;
+    margin-left: auto;
+    padding: 8rem 0 7rem;
 }
 
 .block04__headline {
@@ -521,14 +522,14 @@ input:checked + svg {
 .block04__button1 {
     background: #a3cc40;
     border-radius: 0.2rem;
-    height: 1.4rem;
-    width: 9.4rem;
     font-weight: 500;
     font-size: 0.7rem;
     line-height: 1.28;
     text-align: center;
     color: #fff;
-    border: none;
+    border: 1px solid #a3cc40;
+    padding: 0.4rem 1.8rem;
+    transition: 0.2s;
 }
 
 .block04__button1:hover {
@@ -542,7 +543,6 @@ input:checked + svg {
 .block05 {
     max-width: 56.2rem;
     margin: 0 auto;
-    height: 55.4rem;
 }
 
 .block05__inner {
@@ -567,14 +567,13 @@ input:checked + svg {
     grid-template-rows: repeat(3, 1fr);
     justify-content: center;
     overflow: hidden;
-    height: 42.6rem;
 }
 
 /** Блок 6 */
 .block06 {
     max-width: 56.2rem;
     margin: 0 auto;
-    height: 26.24rem;
+    padding-bottom: 2.7rem;
 }
 
 .block06__inner {
@@ -592,7 +591,6 @@ input:checked + svg {
 }
 
 .block06__cards {
-    max-width: 42.2rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -602,29 +600,30 @@ input:checked + svg {
     position: relative;
     border-radius: 0.4rem;
     overflow: hidden;
+    max-width: 12.2rem;
 }
 
 .block06__pic {
-    height: 16.4rem;
+    height: auto;
+    max-width: 100%;
 }
 
 .block06__text {
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.3;
-    text-align: center;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     color: #fff;
     background: rgba(163, 204, 64, 0.8);
-    width: 13rem;
-    box-sizing: border-box;
     height: 4.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 0 2rem;
 }
 
 .block06__text::before {
@@ -642,7 +641,6 @@ input:checked + svg {
 .block07 {
     background: url('../assets/img/block07__background.jpg') no-repeat center / cover, teal;
     max-width: 56.2rem;
-    height: 41.2rem;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -671,10 +669,11 @@ input:checked + svg {
 .block07__inner {
     max-width: 42.4rem;
     margin: 0 auto;
+    padding: 7rem 0;
 }
 
 .block07__headline {
-    margin: 8rem 0 1rem;
+    margin-bottom: 1rem;
 }
 
 .block07__paragraph {
@@ -684,9 +683,9 @@ input:checked + svg {
 }
 
 .block07__card {
-    width: 10.4rem;
-    height: 14.4rem;
+    max-width: 10.4rem;
     opacity: 0.8;
+    transition: 0.2s;
 }
 
 .block07__card:hover {
@@ -695,15 +694,17 @@ input:checked + svg {
 }
 
 .block07_pic {
-    width: 10.4rem;
-    height: 7.6rem;
+    max-width: 100%;
     border-radius: 0.4rem 0.4rem 0 0;
 }
 
 .block07__description {
-    height: 6.6rem;
     background: #97b13c;
     border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.block07__description-inner {
+    padding: 1rem 0.5rem 0.5rem;
 }
 
 .block07__name {
@@ -711,8 +712,7 @@ input:checked + svg {
     font-size: 0.8rem;
     line-height: 1.26;
     color: #fff;
-    padding-top: 1rem;
-    padding-left: 0.6rem;
+    margin-bottom: 0.75rem;
 }
 
 .block07__quote {
@@ -720,9 +720,7 @@ input:checked + svg {
     font-size: 0.5rem;
     line-height: 1.3;
     color: #fff;
-    padding-top: 0.6rem;
-    padding-left: 0.6rem;
-    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .block07__date {
@@ -731,35 +729,29 @@ input:checked + svg {
     line-height: 1.25;
     color: #fff;
     text-align: right;
-    padding-top: 0.6rem;
-    padding-right: 0.2rem;
 }
 
 /** Блок 8 */
 .block08 {
-    max-width: 56.2rem;
-    margin: 0 auto;
-    height: 29.2rem;
+    padding: 4rem 0 3rem;
 }
 
 .block08__inner {
     max-width: 38.4rem;
-    height: 26rem;
-    margin: 4rem auto 0;
+    margin: 0 auto;
     border-radius: 1rem;
     box-shadow: 0.4rem 0.4rem 2rem rgba(185, 185, 185, 0.37);
+    display: flex;
+    overflow: hidden;
 }
 
 .block08__pic {
-    width: 18rem;
-    height: 26rem;
-    border-radius: 1rem 0 0 1rem;
-    background-image: url('../assets/img/feedbackform_land.jpg');
+    flex: 0 0 45%;
+    background: url('../assets/img/feedbackform_land.jpg') no-repeat center / cover;
     position: relative;
-    background-size: cover;
 }
 
-.block08__pic::before {
+.block08__pic::after {
     content: '';
     position: absolute;
     top: 0;
@@ -767,6 +759,11 @@ input:checked + svg {
     right: 0;
     bottom: 0;
     background: linear-gradient(to right, transparent, #fff);
+}
+
+.block08__form {
+    flex: 0 0 55%;
+    padding: 2rem;
 }
 
 .block08__headline {
@@ -778,18 +775,9 @@ input:checked + svg {
     margin-bottom: 1rem;
 }
 
-.block08__form {
-    float: right;
-    width: 17.6rem;
-    min-height: 23rem;
-    margin-right: 2rem;
-    margin-top: 1.6rem;
-}
-
 .block08__input {
     border-radius: 5px;
     position: relative;
-    max-width: 15.8rem;
     margin-bottom: 1.8rem;
 }
 
@@ -846,15 +834,14 @@ input:checked + svg {
 
 .block08__select {
     border-radius: 0.2rem;
-    min-height: 1.8rem;
     font-weight: normal;
+    padding: 0.4rem 0 0.4rem 0.65rem;
     font-size: 0.8rem;
     line-height: 1.26;
     color: #a1a1a1;
     background: #dedede;
     border: 0;
-    width: 17.4rem;
-    padding-left: 0.65rem;
+    width: 100%;
 }
 
 .block08__select:hover {
@@ -872,13 +859,6 @@ input:checked + svg {
     background: #fff;
     border-radius: 0.2rem;
     height: 1.8rem;
-    max-width: 17.4rem;
-}
-
-.block08__icon {
-    display: inline-block;
-    margin-left: 10rem;
-    vertical-align: middle;
 }
 
 .block08__checkbox-wrap {
@@ -893,7 +873,6 @@ input:checked + svg {
     box-shadow: 0 0 0 0.2rem rgba(224, 44, 12, 0.932);
     background: #fff;
     border-radius: 0.2rem;
-    max-width: 17.4rem;
     height: 1.2rem;
 }
 
@@ -904,8 +883,8 @@ input:checked + svg {
 .block08__tick {
     content: '';
     display: inline-block;
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.8rem;
+    height: 0.8rem;
     vertical-align: middle;
     border: 2px solid #a3cc40;
     border-radius: 0.2rem;
@@ -920,16 +899,18 @@ input:checked + .block08__tick {
     font-size: 0.5rem;
     line-height: 1.3;
     color: #333333;
+    vertical-align: middle;
 }
 
 .block08__button {
-    width: 17.4rem;
-    height: 2.8rem;
-    border: 0;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #a3cc40;
     background: #a3cc40;
     margin-top: 1.8rem;
     border-radius: 0.3rem;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .block08__submit {
@@ -954,44 +935,40 @@ input:checked + .block08__tick {
 .block09 {
     max-width: 56.2rem;
     margin: 0 auto;
-    height: 25rem;
+    padding-bottom: 4rem;
 }
 
 .block09__inner {
-    height: 21.4rem;
-    width: 48.8rem;
+    max-width: 48.8rem;
     margin: 0 auto;
-    background-image: url('../assets/img/map_land.jpg');
-    background-size: cover;
+    background: url('../assets/img/map_land.jpg') no-repeat center / cover;
     border-radius: 1rem;
+    aspect-ratio: 16 / 7;
 }
 
 /** Блок 10 */
 .block10 {
     max-width: 56.2rem;
-    margin: 0 auto;
-    height: 18.2rem;
+    padding: 4rem 0 1.5rem 4.4rem;
     background: #a3cc40;
 }
 
 .block10__inner {
-    padding-top: 4.4rem;
-    padding-left: 4.4rem;
-    height: 11.2rem;
-    width: 44rem;
+    max-width: 44rem;
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .block10__col1 {
-    flex: 0.5;
+    flex: 0 0 50%;
 }
 
 .block10__col2 {
-    flex: 0.23;
+    flex: 0 0 25%;
 }
 
 .block10__col3 {
-    flex: 0.27;
+    flex: 0 0 25%;
 }
 
 .block10__paragraph {
@@ -1003,7 +980,11 @@ input:checked + .block08__tick {
 }
 
 .block10__paragraph-wrap {
-    width: 14rem;
+    max-width: 13rem;
+}
+
+.block10__media-icons {
+    display: flex;
 }
 
 .block10__media {
@@ -1011,18 +992,10 @@ input:checked + .block08__tick {
     height: 1.6rem;
     background: #bee956;
     border-radius: 100%;
-    display: inline-block;
     margin-right: 1.4rem;
-    position: relative;
-}
-
-.block10__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .block10__menu {
@@ -1064,11 +1037,6 @@ input:checked + .block08__tick {
     font-size: 0.8rem;
     line-height: 1rem;
     color: #fff;
-}
-
-.block10__text {
-    margin-left: 4.4rem;
-    padding-bottom: 1.2rem;
 }
 
 #scroll-icon {

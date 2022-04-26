@@ -4,10 +4,11 @@
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    max-height: 14.2rem;
+    
 
     .pic {
-        width: 14.2rem;
-        height: 14.2rem;
+        width: 100%;
     }
 
     .shadow {

@@ -42,6 +42,10 @@
     margin-right: 3rem;
 }
 
+.movie-page__headline-wrap {
+    /* max-width: fit-content; */
+}
+
 .movie-page__headline {
     font-weight: 600;
     font-size: 3rem;

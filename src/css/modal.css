@@ -32,20 +32,17 @@
     position: relative;
     background-color: #fff;
     max-width: 25rem;
-    min-height: 3rem;
     margin: 2rem auto;
     border-radius: 2rem;
 }
 
-.modal__input {
-    position: relative;
-    max-width: 20rem;
-    padding-top: 2rem;
-    padding-left: 1.7rem;
+.modal__form {
+    padding: 7rem 2rem 2rem;
 }
 
-.modal__input1 {
-    padding-top: 5rem;
+.modal__input {
+    position: relative;
+    margin-bottom: 2rem;
 }
 
 .modal__name {
@@ -71,8 +68,8 @@
 
 .modal__label {
     position: absolute;
-    left: 2.4rem;
-    top: 2.4rem;
+    left: 0.8rem;
+    top: 0.4rem;
     font-size: 0.8rem;
     font-weight: normal;
     line-height: 1.26;
@@ -80,8 +77,8 @@
 }
 
 .modal__input_filled .modal__label {
-    top: 1.4rem;
-    left: 2.14rem;
+    top: -0.6rem;
+    left: 0.5rem;
     color: #333333;
     transition: 0.2s;
     background: #fff;
@@ -98,28 +95,17 @@
     background: #fff;
 }
 
-.modal__label1 {
-    top: 5.4rem;
-    transition: 0.2s;
-}
-
-.modal__input_filled .modal__label1 {
-    top: 4.4rem;
-    color: #333333;
-}
-
 .modal__select {
-    margin: 2rem 0 1.5rem 1.7rem;
+    margin-bottom: 2rem;
     border-radius: 0.2rem;
-    min-height: 1.8rem;
     font-weight: normal;
     font-size: 0.8rem;
     line-height: 1.26;
     color: #a1a1a1;
     background: #dedede;
     border: 0;
-    width: 21.6rem;
-    padding-left: 0.5rem;
+    width: 100%;
+    padding: 0.4rem 0.6rem;
 }
 
 .modal__select:hover {
@@ -137,9 +123,12 @@
     background: #fff;
 }
 
+.modal__checkbox-wrapper {
+    margin-bottom: 2rem;
+}
+
 .modal__checkbox {
     cursor: pointer;
-    padding-left: 1.7rem;
 }
 
 .modal__checkbox input {
@@ -149,8 +138,8 @@
 .modal__tick {
     content: '';
     display: inline-block;
-    width: 0.6rem;
-    height: 0.6rem;
+    width: 0.8rem;
+    height: 0.8rem;
     vertical-align: middle;
     border: 2px solid #a3cc40;
     border-radius: 0.2rem;
@@ -165,16 +154,18 @@ input:checked + .modal__tick {
     font-size: 0.5rem;
     line-height: 1.3;
     color: #333333;
+    vertical-align: middle;
 }
 
 .modal__button {
-    width: 21.6rem;
-    height: 2.4rem;
+    width: 100%;
+    padding: 0.75rem;
     border: 0;
     background: #a3cc40;
-    margin: 1.8rem 0 2rem 1.7rem;
     border-radius: 0.3rem;
     cursor: pointer;
+    border: 1px solid #a3cc40;
+    transition: 0.2s;
 }
 
 .modal__button:hover {
