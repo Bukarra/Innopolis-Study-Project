@@ -1,49 +1,45 @@
 .movie-page__header {
     background: linear-gradient(89.92deg, #251a1b 24.47%, #4f272f 64.85%);
     max-width: 56.2rem;
-    height: 6.4rem;
+}
+
+.block01__inner-padding {
+    padding-bottom: 2.14rem;
 }
 
 .movie-page__details {
-    height: 30.4rem;
     max-width: 56.2rem;
     border-bottom: 2px solid rgba(0, 0, 0, 0.13);
-    position: relative;
 }
 
 .movie-page__inner {
-    height: 29.2rem;
     max-width: 53.8rem;
+    margin: 1.4rem auto 0;
     background: #e5e5e5;
-    position: absolute;
-    top: 1.2rem;
-    left: 1.2rem;
-    right: 1.2rem;
+    display: flex;
 }
-
-.movie-page__line {
-    border-left: 2px solid rgba(0, 0, 0, 0.13);
-    height: 25.5rem;
-    position: absolute;
-    left: 27rem;
-    top: 2rem;
+.movie-page__left {
+    flex: 0 0 50%;
+}
+.movie-page__poster-wrap {
+    margin: 2rem 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.13);
 }
 
 .movie-page__poster {
-    width: 22rem;
-    height: 25.5rem;
-    margin: 2rem 0 2rem 3rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    padding: 0 2rem 0 3.3rem;
 }
 
 .movie-page__description {
-    float: right;
-    display: flex;
-    flex-direction: column;
-    margin-right: 3rem;
+    padding: 1.2rem 4.6rem 3.6rem 2rem;
+    flex: 0 0 50%;
 }
 
 .movie-page__headline-wrap {
-    /* max-width: fit-content; */
+    margin-bottom: 1.4rem;
 }
 
 .movie-page__headline {
@@ -53,14 +49,14 @@
     color: #333333;
 }
 
-.movie-page__row {
+.movie-page__row1 {
     display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .movie-page__ratestars {
-    margin-top: 1.4rem;
     display: flex;
-    width: 4.5rem;
     color: #7a7d72;
 }
 
@@ -89,7 +85,6 @@
     font-size: 0.64rem;
     line-height: 1.3;
     color: #a1a1a1;
-    margin: 1.4rem 0 0 0.4rem;
 }
 
 .movie-page__ratenumber2 {
@@ -97,7 +92,6 @@
     font-size: 0.54rem;
     line-height: 1.27;
     color: #a3cc40;
-    margin: 1.5rem 0 0 1.2rem;
 }
 
 .movie-page__rateservice {
@@ -105,13 +99,17 @@
     font-size: 0.64rem;
     line-height: 1.3;
     color: #a1a1a1;
-    margin: 1.4rem 0 0 0.6rem;
+}
+
+.movie-page__row2 {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 .movie-page__calendar {
     display: flex;
-    margin-top: 1.3rem;
-    margin-left: 0.1rem;
+    gap: 0.2rem;
 }
 
 .movie-page__date {
@@ -119,13 +117,12 @@
     font-size: 0.54rem;
     line-height: 1.27;
     color: #4c4d4f;
-    margin-left: 0.2rem;
 }
 
 .movie-page__views {
     display: flex;
-    margin-top: 1.3rem;
-    margin-left: 2.4rem;
+    gap: 0.2rem;
+    align-items: center;
 }
 
 .movie-page__views-number {
@@ -133,14 +130,12 @@
     font-size: 0.54rem;
     line-height: 1.27;
     color: #4c4d4f;
-    margin-left: 0.2rem;
-    margin-bottom: 1rem;
 }
 
 .movie-page__likes {
     display: flex;
-    margin-top: 1.3rem;
-    margin-left: 2.4rem;
+    gap: 0.2rem;
+    align-items: center;
 }
 
 .like-icon {
@@ -161,13 +156,10 @@
     font-size: 0.54rem;
     line-height: 1.27;
     color: #4c4d4f;
-    margin-left: 0.2rem;
-    margin-bottom: 1rem;
 }
 
-.movie-page__text-wrap {
-    max-width: 20rem;
-    margin-top: 0.6rem;
+.movie-page__row3 {
+    margin-bottom: 2.2rem;
 }
 
 .movie-page__text {
@@ -182,25 +174,21 @@
     flex-direction: column;
 }
 
-.movie-page__about {
-    margin-top: 1.4rem;
+.movie-page__stroke {
+    display: flex;
+    padding: 0.3rem 0;
 }
 
-.movie-page__stroke {
-    width: 20.2rem;
-    height: 1.4rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+.movie-page__row4 .movie-page__stroke:not(:last-child) {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.13);
 }
 
 .movie-page__element1 {
-    flex: 0.25;
-    margin-top: 0.3rem;
+    flex: 0 0 25%;
 }
 
 .movie-page__element2 {
-    flex: 0.75;
+    flex: 0 0 75%;
 }
 
 .movie-page__headline-font {
@@ -217,13 +205,6 @@
     color: #696969;
 }
 
-.movie-page__stroke_last {
-    width: 20.2rem;
-    height: 1.4rem;
-    display: flex;
-    align-items: center;
-}
-
 .movie-page__text-font_last {
     font-weight: 600;
     font-size: 0.54rem;
@@ -233,11 +214,10 @@
 
 .movie-page__other-films {
     max-width: 56.2rem;
-    height: 29rem;
 }
 
-.movie-page__headline-wrap {
-    margin: 2.4rem 0 0 4.2rem;
+.movie-page__headline-wrapper {
+    margin: 2.5rem 0 1.4rem 4.5rem;
 }
 
 .movie-page__films-headline {
@@ -250,18 +230,18 @@
 .movie-page__carousels {
     margin: 0 auto;
     max-width: 44.8rem;
-    padding-top: 1rem;
 }
 
 .movie-page__carousel1 {
     max-width: 41.4rem;
-    margin: 0 auto;
+    margin: 0 auto 1.6rem;
 }
 
 .movie-page__carousel-items {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    margin-bottom: 1.2rem;
 }
 
 .movie-page__carousel-title {
@@ -280,15 +260,11 @@
 
 .movie-page__carousel-card {
     width: 6.4rem;
-    height: 9rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 1.2rem;
 }
 
 .movie-page__carousel-pic {
-    height: 7.2rem;
+    max-width: 100%;
+    height: auto;
     border-radius: 0.4rem;
 }
 
@@ -297,6 +273,7 @@
     font-size: 0.6rem;
     line-height: 1.33;
     color: #a3cc40;
+    margin: 0.5rem 0;
 }
 
 .movie-page__poster-info {

@@ -47,14 +47,7 @@ const fetchBlockFilms = async () => {
     const requests = [];
     const filmBlocksMap = new Map();
 
-    let limit = 5;
-
     films.forEach((film) => {
-        if (limit < 1) {
-            return;
-        }
-        limit--;
-
         const [filmLayout, desc] = renderFilmBlock(film.posterUrlPreview, film.nameRu, film.filmId);
         filmBlocksMap.set(film.filmId, filmLayout);
 

@@ -15,8 +15,24 @@
 <body>
     <div class="movie-page">
         <div class="movie-page__header">
+            <div class="block01__lang-wrapper">
+                <div class="block01__lang dropdown">
+                    <a href="#" id="click" class="block01__dropdown-trigger">
+                        <span>Ru</span>
+                        <svg width=".4rem" height=".2rem">
+                            <use xlink:href="#arrow_down"></use>
+                        </svg>
+                    </a>
+                    <div class="block01__dropdown-list">
+                        <ul>
+                            <li><a href="#">En</a></li>
+                            <li><a href="#">Ru</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="container">
-                <div class="block01__inner">
+                <div class="block01__inner block01__inner-padding">
                     <div class="block01__col1">
                         <a href="http://university.innopolis.ru" target="blank"
                             title="Продажа билетов в кино в Иннополисе">
@@ -34,71 +50,58 @@
                         <div class="block01__menu-wrap">
                             <div class="block01__col2">
                                 <div class="block01__row1">
-                                    <p class="block01__tel block01__row1_margin">
+                                    <div class="block01__tel">
                                         <a class="link-white" href="tel:+78003551256">
                                             +7 (800) 355 12-56
                                         </a>
-                                    </p>
-                                    <p class="block01__mail block01__row1_margin">
+                                    </div>
+                                    <div class="block01__mail">
                                         <a class="link-white link-underline" href="mailto:kino@innopolis.ru">
                                             kino@innopolis.ru
                                         </a>
-                                    </p>
-                                    <p class="block01__address block01__row1_margin">
-                                        ул.Спортивная д.1
-                                    </p>
-                                    <p class="block01__call">
+                                    </div>
+                                    <div class="block01__address">
+                                        <a id="city-link" data-fancybox data-src="#city-popup"></a>
+                                        <span>ул. Спортивная, д. 1</span>
+                                    </div>
+                                    <div class="block01__call">
                                         <label>
                                             <button class="block01__button button__font-family" type="submit"
                                                 name="call">
                                                 <svg width=".6rem" height=".6rem">
                                                     <use xlink:href="#call_icon"></use>
                                                 </svg>
-                                                Заказать звонок
+                                                <span>Заказать звонок</span>
                                             </button>
                                         </label>
-                                    </p>
-                                    <div class="block01__lang dropdown dropdown_opened">
-                                        <a href="#" class="block01__dropdown-trigger">
-                                            <span>Ru</span>
-                                            <svg width=".4rem" height=".2rem">
-                                                <use xlink:href="#arrow_down"></use>
-                                            </svg>
-                                        </a>
-                                        <div class="block01__dropdown-list">
-                                            <ul>
-                                                <li><a href="#">Ru</a></li>
-                                                <li><a href="#">En</a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="block01__row2">
-                                    <p class="block01__section1 block01__row2_margin">
+                                    <p class="block01__section1">
                                         <a href="#whyus" class="link-menu block01__upper"
                                             title="Продажа билетов в кино в Иннополисе">
                                             Event Details
                                         </a>
                                     </p>
-                                    <p class="block01__section2 block01__row2_margin">
+                                    <p class="block01__section2">
                                         <a href="#selectfilm" class="link-menu block01__upper"
                                             title="Продажа билетов в кино в Иннополисе">
                                             Speakers
                                         </a>
                                     </p>
-                                    <p class="block01__section3 block01__row2_margin">
+                                    <p class="block01__section3">
                                         <a href="#films" class="link-menu block01__upper"
                                             title="Продажа билетов в кино в Иннополисе">
                                             Sponsors
                                         </a>
                                     </p>
-                                    <p class="block01__section4 block01__row2_margin">
+                                    <p class="block01__section4">
                                         <a href="#extras" class="link-menu block01__upper"
                                             title="Продажа билетов в кино в Иннополисе">
                                             Past Events
                                         </a>
                                     </p>
-                                    <p class="block01__section5 block01__row2_margin">
+                                    <p class="block01__section5">
                                         <a href="#comments" class="link-menu block01__upper"
                                             title="Продажа билетов в кино в Иннополисе">
                                             Contact
@@ -113,108 +116,109 @@
         </div>
         <div class="movie-page__details">
             <div class="movie-page__inner">
-                <div class="movie-page__film">
-                    <img class="movie-page__poster" id="sf-poster" alt="Постер фильма">
-                    <div class="movie-page__line"></div>
-                    <div class="movie-page__description">
-                        <div class="movie-page__headline-wrap">
-                            <h1 class="movie-page__headline" id="sf-header">Загрузка...</h1>
+                <div class="movie-page__left">
+                    <div class="movie-page__poster-wrap">
+                        <img class="movie-page__poster" id="sf-poster" alt="Постер фильма">
+                    </div>
+                </div>
+                <div class="movie-page__description">
+                    <div class="movie-page__headline-wrap">
+                        <h1 class="movie-page__headline" id="sf-header">Загрузка...</h1>
+                    </div>
+                    <div class="movie-page__row1">
+                        <div class="movie-page__ratestars">
+                            <svg data-value="1" class="rating-star" width=".8rem" height=".8rem">
+                                <use xlink:href="#ratestar"></use>
+                            </svg>
+                            <svg data-value="2" class="rating-star" width=".8rem" height=".8rem">
+                                <use xlink:href="#ratestar"></use>
+                            </svg>
+                            <svg data-value="3" class="rating-star" width=".8rem" height=".8rem">
+                                <use xlink:href="#ratestar"></use>
+                            </svg>
+                            <svg data-value="4" class="rating-star" width=".8rem" height=".8rem">
+                                <use xlink:href="#ratestar"></use>
+                            </svg>
+                            <svg data-value="5" class="rating-star" width=".8rem" height=".8rem">
+                                <use xlink:href="#ratestar"></use>
+                            </svg>
                         </div>
-                        <div class="movie-page__row">
-                            <div class="movie-page__ratestars">
-                                <svg data-value="1" class="rating-star" width=".8rem" height=".8rem">
-                                    <use xlink:href="#ratestar"></use>
-                                </svg>
-                                <svg data-value="2" class="rating-star" width=".8rem" height=".8rem">
-                                    <use xlink:href="#ratestar"></use>
-                                </svg>
-                                <svg data-value="3" class="rating-star" width=".8rem" height=".8rem">
-                                    <use xlink:href="#ratestar"></use>
-                                </svg>
-                                <svg data-value="4" class="rating-star" width=".8rem" height=".8rem">
-                                    <use xlink:href="#ratestar"></use>
-                                </svg>
-                                <svg data-value="5" class="rating-star" width=".8rem" height=".8rem">
-                                    <use xlink:href="#ratestar"></use>
-                                </svg>
-                            </div>
-                            <span class="movie-page__ratenumber1" id="sf-rating-number">
-                                5.0
+                        <span class="movie-page__ratenumber1" id="sf-rating-number">
+                            5.0
+                        </span>
+                        <span class="movie-page__rateservice">
+                            Inno Rating
+                        </span>
+                    </div>
+                    <div class="movie-page__row2">
+                        <div class="movie-page__calendar">
+                            <svg width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.5 5.5H3.5V6.5H4.5V5.5ZM6.5 5.5H5.5V6.5H6.5V5.5ZM8.5 5.5H7.5V6.5H8.5V5.5ZM9.5 2H9V1H8V2H4V1H3V2H2.5C1.945 2 1.505 2.45 1.505 3L1.5 10C1.5 10.55 1.945 11 2.5 11H9.5C10.05 11 10.5 10.55 10.5 10V3C10.5 2.45 10.05 2 9.5 2ZM9.5 10H2.5V4.5H9.5V10Z"
+                                    fill="#A3CC40" />
+                            </svg>
+                            <span class="movie-page__date" id="sf-premiere">
+                                25 Ноябрь 2019
                             </span>
-                            <span class="movie-page__rateservice">
-                                Inno Rating
+                        </div>
+                        <div class="movie-page__views">
+                            <svg width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 2.25C3.5 2.25 1.365 3.805 0.5 6C1.365 8.195 3.5 9.75 6 9.75C8.5 9.75 10.635 8.195 11.5 6C10.635 3.805 8.5 2.25 6 2.25ZM6 8.5C4.62 8.5 3.5 7.38 3.5 6C3.5 4.62 4.62 3.5 6 3.5C7.38 3.5 8.5 4.62 8.5 6C8.5 7.38 7.38 8.5 6 8.5ZM6 4.5C5.17 4.5 4.5 5.17 4.5 6C4.5 6.83 5.17 7.5 6 7.5C6.83 7.5 7.5 6.83 7.5 6C7.5 5.17 6.83 4.5 6 4.5Z"
+                                    fill="#A3CC40" />
+                            </svg>
+                            <span class="movie-page__views-number" id="sf-views">
+                                2.5K Views
                             </span>
                         </div>
-                        <div class="movie-page__row">
-                            <div class="movie-page__calendar">
-                                <svg width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4.5 5.5H3.5V6.5H4.5V5.5ZM6.5 5.5H5.5V6.5H6.5V5.5ZM8.5 5.5H7.5V6.5H8.5V5.5ZM9.5 2H9V1H8V2H4V1H3V2H2.5C1.945 2 1.505 2.45 1.505 3L1.5 10C1.5 10.55 1.945 11 2.5 11H9.5C10.05 11 10.5 10.55 10.5 10V3C10.5 2.45 10.05 2 9.5 2ZM9.5 10H2.5V4.5H9.5V10Z"
-                                        fill="#A3CC40" />
-                                </svg>
-                                <span class="movie-page__date" id="sf-premiere">
-                                    25 Ноябрь 2019
-                                </span>
+                        <div class="movie-page__likes">
+                            <svg class="like-icon" width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 10.675L5.275 10.015C2.7 7.68 1 6.14 1 4.25C1 2.71 2.21 1.5 3.75 1.5C4.62 1.5 5.455 1.905 6 2.545C6.545 1.905 7.38 1.5 8.25 1.5C9.79 1.5 11 2.71 11 4.25C11 6.14 9.3 7.68 6.725 10.02L6 10.675Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <span class="movie-page__likes-number" id="sf-likes">
+                                200 Likes
+                            </span>
+                        </div>
+                    </div>
+                    <div class="movie-page__row3">
+                        <p class="movie-page__text" id="sf-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat
+                            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est
+                            laborum.
+                        </p>
+                    </div>
+                    <div class="movie-page__row4">
+                        <div class="movie-page__stroke">
+                            <div class="movie-page__element1">
+                                <h2 class="movie-page__headline-font">
+                                    Страна
+                                </h2>
                             </div>
-                            <div class="movie-page__views">
-                                <svg width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 2.25C3.5 2.25 1.365 3.805 0.5 6C1.365 8.195 3.5 9.75 6 9.75C8.5 9.75 10.635 8.195 11.5 6C10.635 3.805 8.5 2.25 6 2.25ZM6 8.5C4.62 8.5 3.5 7.38 3.5 6C3.5 4.62 4.62 3.5 6 3.5C7.38 3.5 8.5 4.62 8.5 6C8.5 7.38 7.38 8.5 6 8.5ZM6 4.5C5.17 4.5 4.5 5.17 4.5 6C4.5 6.83 5.17 7.5 6 7.5C6.83 7.5 7.5 6.83 7.5 6C7.5 5.17 6.83 4.5 6 4.5Z"
-                                        fill="#A3CC40" />
-                                </svg>
-                                <span class="movie-page__views-number" id="sf-views">
-                                    2.5K Views
-                                </span>
-                            </div>
-                            <div class="movie-page__likes">
-                                <svg class="like-icon" width=".6rem" height=".6rem" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6 10.675L5.275 10.015C2.7 7.68 1 6.14 1 4.25C1 2.71 2.21 1.5 3.75 1.5C4.62 1.5 5.455 1.905 6 2.545C6.545 1.905 7.38 1.5 8.25 1.5C9.79 1.5 11 2.71 11 4.25C11 6.14 9.3 7.68 6.725 10.02L6 10.675Z"
-                                        fill="currentColor" />
-                                </svg>
-                                <span class="movie-page__likes-number" id="sf-likes">
-                                    200 Likes
-                                </span>
+                            <div class="movie-page__element2">
+                                <p class="movie-page__text-font">
+                                    Дания
+                                </p>
                             </div>
                         </div>
-                        <div class="movie-page__row movie-page__text-wrap">
-                            <p class="movie-page__text" id="sf-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat
-                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est
-                                laborum.
-                            </p>
-                        </div>
-                        <div class="movie-page__row4 movie-page__about">
-                            <div class="movie-page__stroke">
-                                <div class="movie-page__element1">
-                                    <h2 class="movie-page__headline-font">
-                                        Страна
-                                    </h2>
-                                </div>
-                                <div class="movie-page__element2">
-                                    <span class="movie-page__text-font">
-                                        Дания
-                                    </span>
-                                </div>
+                        <div class="movie-page__stroke">
+                            <div class="movie-page__element1">
+                                <h2 class="movie-page__headline-font">
+                                    Режиссер
+                                </h2>
                             </div>
-                            <div class="movie-page__stroke">
-                                <div class="movie-page__element1">
-                                    <h2 class="movie-page__headline-font">
-                                        Режиссер
-                                    </h2>
-                                </div>
-                                <div class="movie-page__element2">
-                                    <span class="movie-page__text-font">
-                                        Михаэль Ноер
-                                    </span>
-                                </div>
+                            <div class="movie-page__element2">
+                                <p class="movie-page__text-font">
+                                    Михаэль Ноер
+                                </p>
                             </div>
                         </div>
                         <div class="movie-page__stroke">
@@ -224,9 +228,9 @@
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font">
+                                <p class="movie-page__text-font">
                                     Джеспер Финк, Михаэль Ноер
-                                </span>
+                                </p>
                             </div>
                         </div>
                         <div class="movie-page__stroke">
@@ -236,9 +240,9 @@
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font">
+                                <p class="movie-page__text-font">
                                     Матильда Аппелин, Рене Эзра, Томас Радур, ...
-                                </span>
+                                </p>
                             </div>
                         </div>
                         <div class="movie-page__stroke">
@@ -248,9 +252,9 @@
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font">
+                                <p class="movie-page__text-font">
                                     Стурла Брандт Грёвлен
-                                </span>
+                                </p>
                             </div>
                         </div>
                         <div class="movie-page__stroke">
@@ -260,9 +264,9 @@
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font">
+                                <p class="movie-page__text-font">
                                     Руне Тонсгор Сёренсен
-                                </span>
+                                </p>
                             </div>
                         </div>
                         <div class="movie-page__stroke">
@@ -272,75 +276,77 @@
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font">
+                                <p class="movie-page__text-font">
                                     Сорен Шварцберг, Луиз Ниссен
-                                </span>
+                                </p>
                             </div>
                         </div>
-                        <div class="movie-page__stroke_last">
+                        <div class="movie-page__stroke">
                             <div class="movie-page__element1">
                                 <h2 class="movie-page__headline-font">
                                     Время
                                 </h2>
                             </div>
                             <div class="movie-page__element2">
-                                <span class="movie-page__text-font_last">
+                                <p class="movie-page__text-font_last">
                                     104 мин. / 01:44
-                                </span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="movie-page__other-films">
-            <div class="movie-page__headline-wrap">
-                <h3 class="movie-page__films-headline">
-                    Другие фильмы
-                </h3>
-            </div>
-            <div class="movie-page__carousels">
-                <div class="movie-page__carousel1">
-                    <div class="movie-page__carousel-items">
-                        <div class="movie-page__carousel-title">
-                            Экшн
-                        </div>
-                        <div class="movie-page__carousel-counter">
-                            1/30
-                        </div>
+    </div>
+    <div class="movie-page__other-films">
+        <div></div>
+        <div class="movie-page__headline-wrapper">
+            <h3 class="movie-page__films-headline">
+                Другие фильмы
+            </h3>
+        </div>
+        <div class="movie-page__carousels">
+            <div class="movie-page__carousel1">
+                <div class="movie-page__carousel-items">
+                    <div class="movie-page__carousel-title">
+                        Экшн
                     </div>
-                    <div class="owl-carousel owl-theme">
-                        <div class="movie-page__carousel-card">
-                            <img class="movie-page__carousel-pic" src="images/movie-page__carousel-pic.jpg"
-                                alt="Постер фильма">
-                            <span class="movie-page__poster-title">
-                                Лёд
-                            </span>
-                            <span class="movie-page__poster-info">
-                                2018, фильм Ивана Иванова
-                            </span>
-                        </div>
+                    <div class="movie-page__carousel-counter">
+                        1/30
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme">
+                    <div class="movie-page__carousel-card">
+                        <img class="movie-page__carousel-pic" src="images/movie-page__carousel-pic.jpg"
+                            alt="Постер фильма">
+                        <p class="movie-page__poster-title">
+                            Лёд
+                        </p>
+                        <p class="movie-page__poster-info">
+                            2018, фильм Ивана Иванова
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="block10">
-            <div class="block10__inner">
-                <div class="block10__col block10__col1">
-                    <div>
-                        <a href="http://university.innopolis.ru" target="blank"
-                            title="Продажа билетов в кино в Иннополисе">
-                            <svg width="8rem" height="2rem">
-                                <use xlink:href="#main_logo"></use>
-                            </svg>
-                        </a>
-                        <div class="block10__paragraph-wrap">
-                            <p class="block10__paragraph">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam.
-                            </p>
-                        </div>
+    </div>
+    <footer class="block10">
+        <div class="block10__inner">
+            <div class="block10__col1">
+                <div>
+                    <a href="http://university.innopolis.ru" target="blank" title="Продажа билетов в кино в Иннополисе">
+                        <svg width="8rem" height="2rem">
+                            <use xlink:href="#main_logo"></use>
+                        </svg>
+                    </a>
+                    <div class="block10__paragraph-wrap">
+                        <p class="block10__paragraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam.
+                        </p>
+                    </div>
+                    <div class="block10__media-icons">
                         <div class="block10__media">
                             <svg class="block10__icon" width=".6rem" height=".6rem">
                                 <use xlink:href="#media_inst"></use>
@@ -368,73 +374,71 @@
                         </div>
                     </div>
                 </div>
-                <div class="block10__col block10__col2">
-                    <p class="block10__headline">Site</p>
-                    <ul>
-                        <li class="block10___item"><a href=" #whyus" class="block10__menu"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Event details
-                            </a>
-                        </li>
-                        <li class="block10___item"><a href=" #selectfilm" class="block10__menu"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Speakers
-                            </a>
-                        </li>
-                        <li class="block10___item"><a href="#films" class="block10__menu"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Sponsors
-                            </a>
-                        </li>
-                        <li class="block10___item"><a href="#extras" class="block10__menu"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Past events
-                            </a>
-                        </li>
-                        <li class="block10___item"><a href="#comments" class="block10__menu"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="block10__col block10__col3">
-                    <p class="block10__headline">Contact</p>
-                    <ul>
-                        <li class="block10___item"><a href="tel:+78003551256" class="block10__contact"
-                                title="Продажа билетов в кино в Иннополисе">
-                                +7 (800) 355 12-56
-                            </a>
-                        </li>
-                        <li class="block10___item"><a href="mailto:kino@innopolis.ru" class="block10__contact"
-                                title="Продажа билетов в кино в Иннополисе">
-                                kino@innopolis.ru
-                            </a>
-                        </li>
-                        <li class="block10___item"><a class="block10__contact"
-                                title="Продажа билетов в кино в Иннополисе">
-                                420500, г. Иннополис ул.Университетская, д.1
-                            </a>
-                        </li>
-                        <li class="block10___item"><a class="block10__contact"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Как добраться
-                            </a>
-                        </li>
-                        <li class="block10___item"><a class="block10__contact"
-                                title="Продажа билетов в кино в Иннополисе">
-                                Все контакты
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-            <div class="block10__text">
-                <span class="block10__copyright">
-                    Copyright @ 2020 Innopolis University . All Rights Reserved.
-                </span>
+            <div class="block10__col2">
+                <p class="block10__headline">Site</p>
+                <ul>
+                    <li class="block10___item"><a href=" #whyus" class="block10__menu"
+                            title="Продажа билетов в кино в Иннополисе">
+                            Event details
+                        </a>
+                    </li>
+                    <li class="block10___item"><a href=" #selectfilm" class="block10__menu"
+                            title="Продажа билетов в кино в Иннополисе">
+                            Speakers
+                        </a>
+                    </li>
+                    <li class="block10___item"><a href="#films" class="block10__menu"
+                            title="Продажа билетов в кино в Иннополисе">
+                            Sponsors
+                        </a>
+                    </li>
+                    <li class="block10___item"><a href="#extras" class="block10__menu"
+                            title="Продажа билетов в кино в Иннополисе">
+                            Past events
+                        </a>
+                    </li>
+                    <li class="block10___item"><a href="#comments" class="block10__menu"
+                            title="Продажа билетов в кино в Иннополисе">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </footer>
+            <div class="block10__col3">
+                <p class="block10__headline">Contact</p>
+                <ul>
+                    <li class="block10___item"><a href="tel:+78003551256" class="block10__contact"
+                            title="Продажа билетов в кино в Иннополисе">
+                            +7 (800) 355 12-56
+                        </a>
+                    </li>
+                    <li class="block10___item"><a href="mailto:kino@innopolis.ru" class="block10__contact"
+                            title="Продажа билетов в кино в Иннополисе">
+                            kino@innopolis.ru
+                        </a>
+                    </li>
+                    <li class="block10___item"><a class="block10__contact" title="Продажа билетов в кино в Иннополисе">
+                            420500, г. Иннополис, ул. Университетская, д. 1
+                        </a>
+                    </li>
+                    <li class="block10___item"><a class="block10__contact" title="Продажа билетов в кино в Иннополисе">
+                            Как добраться
+                        </a>
+                    </li>
+                    <li class="block10___item"><a class="block10__contact" title="Продажа билетов в кино в Иннополисе">
+                            Все контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="block10__text">
+            <span class="block10__copyright">
+                Copyright @ 2020 Innopolis University. All Rights Reserved.
+            </span>
+        </div>
+    </footer>
     </div>
     <svg style="display:none">
         <symbol id="main_logo" viewBox="0 0 156 40" fill="none" xmlns="http://www.w3.org/2000/svg">
