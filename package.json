@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "jquery": "^3.6.0",
     "owl.carousel": "^2.3.4",
     "ref-loader": "^1.0.3",
@@ -29,7 +30,8 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "npm run clean && webpack --mode=production",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",

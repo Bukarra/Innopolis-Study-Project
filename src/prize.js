@@ -20,25 +20,25 @@ function initializeField(field) {
     const fieldError = field.querySelector('.modal__error');
 
     reset();
-    
+
     function clearError() {
         field.classList.remove(ERROR_CLASS_NAME);
         fieldError.innerText = '';
     }
 
-    input.addEventListener('focus', function() {
+    input.addEventListener('focus', function () {
         field.classList.add(FOCUSED_CLASS_NAME);
-    })
+    });
 
     input.addEventListener('blur', () => {
-        if(!input.value) {
-        field.classList.remove(FOCUSED_CLASS_NAME);
+        if (!input.value) {
+            field.classList.remove(FOCUSED_CLASS_NAME);
         }
-    })
+    });
 
     input.addEventListener('input', () => {
         clearError();
-    })
+    });
 
     function reset() {
         input.value = '';
@@ -52,13 +52,13 @@ function initializeField(field) {
             fieldError.innerText = errorText;
         },
         getValue() {
-            return input.value
+            return input.value;
         },
         focus() {
-            input.focus()
+            input.focus();
         },
-        reset: reset
-    }
+        reset: reset,
+    };
 }
 
 const nameFieldUtils = initializeField(nameField);
@@ -81,22 +81,22 @@ function handleSubmit(event) {
     const nameValue = nameFieldUtils.getValue();
     const emailValue = emailFieldUtils.getValue();
 
-    if(!nameValue) {
+    if (!nameValue) {
         nameFieldUtils.addError('Необходимо указать имя');
         return;
     }
 
-    if(!emailValue) {
+    if (!emailValue) {
         emailFieldUtils.addError('Укажите email');
         return;
     }
 
-    if(!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
+    if (!/^[\w-]{2,16}@[\w-]{3,6}\.[a-z]{2,3}$/i.test(emailValue)) {
         emailFieldUtils.addError('Невалидный email');
         return;
     }
 
-    if(!selectPrize.value === 'none') {
+    if (!selectPrize.value === 'none') {
         selectPrize.classList.add(SELECT_ERROR);
         return;
     }
@@ -104,20 +104,19 @@ function handleSubmit(event) {
     const data = {
         name: nameValue,
         email: emailValue,
-        prize: selectPrize.value
+        prize: selectPrize.value,
     };
-    
+
     const url = new URL('https://inno-js.ru/multystub/stc-21-03/feedback');
     url.search = new URLSearchParams(data).toString();
 
     fetch(url.toString())
-    .then(data => data.json())
-    .then((data) => {
-        popupToggle();
-        nameFieldUtils.reset();
-        emailFieldUtils.reset();
-    });
-
+        .then((data) => data.json())
+        .then((data) => {
+            popupToggle();
+            nameFieldUtils.reset();
+            emailFieldUtils.reset();
+        });
 }
 
 form.addEventListener('submit', handleSubmit);
