@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Учебный проект",
   "main": "index.js",
-  "homepage": "https://bukarra.github.io/Cinema/",
   "dependencies": {
     "file-loader": "^6.2.0",
     "gh-pages": "^4.0.0",
@@ -43,5 +42,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Bukarra/Cinema/issues"
-  }
+  },
+  "homepage": "https://github.com/Bukarra/Cinema#readme"
 }
