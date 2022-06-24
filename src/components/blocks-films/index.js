@@ -13,7 +13,7 @@ function renderFilmBlock(posterUrl, filmName, id) {
     wrapper.classList.add(style.movie);
 
     const link = document.createElement('a');
-    link.href = `./single/?id=${id}`;
+    link.href = `/single/?id=${id}`;
 
     const img = document.createElement('img');
     img.classList.add(style.pic);
